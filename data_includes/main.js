@@ -47,9 +47,9 @@ PennController.Template(
     newImage("cov", "Covered_Box.jpg")
         .settings.size(600,200)
     ,
-    newCanvas(650,200)
+    newCanvas(1250,200)
         .settings.add(   0 , 0 , getImage("visible") )
-        .settings.add( 1250 , 0 , getImage("cov") )
+        .settings.add( 650 , 0 , getImage("cov") )
         .print()
     ,
     newSelector()
