@@ -38,18 +38,18 @@ PennController.Template(
     newAudio("description", variable.AudioFile)
         .play()
     ,
-    newText(variable.Description)
-        .unfold(2600)
-    ,
+    //newText(variable.Description)
+    //    .unfold(2600)
+    //,
     newImage("visible", variable.ImageFile)
-        .settings.size(400,400)
+        .settings.size(600,400)
     ,
     newImage("cov", "Covered_Box.jpg")
-        .settings.size(400,400)
+        .settings.size(600,400)
     ,
-    newCanvas(850,400)
+    newCanvas(1250,400)
         .settings.add(   0 , 0 , getImage("visible") )
-        .settings.add( 450 , 0 , getImage("cov") )
+        .settings.add( 1250 , 0 , getImage("cov") )
         .print()
     ,
     newSelector()
