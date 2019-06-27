@@ -42,12 +42,12 @@ PennController.Template(
     //    .unfold(2600)
     //,
     newImage("visible", variable.ImageFile)
-        .settings.size(600,400)
+        .settings.size(600,200)
     ,
     newImage("cov", "Covered_Box.jpg")
-        .settings.size(600,400)
+        .settings.size(600,200)
     ,
-    newCanvas(1250,400)
+    newCanvas(650,200)
         .settings.add(   0 , 0 , getImage("visible") )
         .settings.add( 1250 , 0 , getImage("cov") )
         .print()
