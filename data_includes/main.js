@@ -48,7 +48,7 @@ PennController.Template(
         .settings.size(600,400)
     ,
     newCanvas(1250,400)
-        .settings.add(   0 , 0 , getImage("visible") )
+        .settings.add(   0 , 100 , getImage("visible") )
         .settings.add( 650 , 0 , getImage("cov") )
         .print()
     ,
