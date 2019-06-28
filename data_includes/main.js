@@ -16,13 +16,18 @@ PennController( "welcome" ,
     ,
     newTextInput("age")
         .print()
+		.wait()
     ,
     newVar("age")
         .settings.global()
         .set( getTextInput("age") )
     ,
-    newDropDown("GenderOptions", "เพศกำเนิด")
+    newDropDown("GenderOptions", "")
     .settings.add("หญิง", "ชาย")
+    .print()
+	,
+    newText("เพศกำเนิด")
+    .settings.after( getDropDown("GenderOptions") )
     .print()
     ,
     newButton("Start")
