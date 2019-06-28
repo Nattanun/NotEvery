@@ -39,13 +39,11 @@ PennController( "welcome" ,
 	,
 	getTextInput("age").test.text( [0-100] )
 					.failure( newText("โปรดกรอกอายุของท่านด้วยค่ะ")
-					.print()
-					.remove())
+					.print())
 	,
 	getDropDown("GenderOptions").test.selected()
 					.failure( newText("โปรดเลือกเพศกำเนิดของท่านด้วยค่ะ")
-					.print()
-					.remove())
+					.print())
 	,
     newButton("Start")
         .print()
