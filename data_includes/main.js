@@ -29,13 +29,14 @@ PennController( "welcome" ,
     .settings.after( getDropDown("GenderOptions") )
     .print()
     ,
+	newVar("gender")
+        .settings.global()
+		.set( getDropDown("GenderOptions").wait("first") )
+	,
     newButton("Start")
         .print()
         .wait()
     ,
-    newVar("gender")
-        .settings.global()
-        .set( getTextInput("GenderOptions") )
 )
 .log( "age" , getVar("age") )
 .log( "gender" , getVar("gender") )
