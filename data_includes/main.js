@@ -76,8 +76,26 @@ PennController.Template(
   .log( "gender" , getVar("gender") )
 )
 
+
 PennController.Template( 
   variable => PennController( "practiceB" ,
+    newTimer(500)
+        .start()
+        .wait()
+    ,
+    newAudio("audPracticeB1", "B_01.wav")
+        .play()
+    ,
+    newImage("ImageVisPracticeB1", "B_1.jpg")
+        .settings.size(1200,400)
+    ,
+    newCanvas(1250,400)
+        .settings.add(   25 , 0 , getImage("ImageVisPracticeB1") )
+        .print()
+    ,
+    getAudio("audPracticeB1")
+       .wait("first")
+    ,
     newTimer(500)
         .start()
         .wait()
@@ -119,6 +137,23 @@ PennController.Template(
         .start()
         .wait()
     ,
+    newAudio("audPracticeC1", "C_01.wav")
+        .play()
+    ,
+    newImage("ImageVisPracticeC1", "C_1.jpg")
+        .settings.size(1200,400)
+    ,
+    newCanvas(1250,400)
+        .settings.add(   25 , 0 , getImage("ImageVisPracticeC1") )
+        .print()
+    ,
+    getAudio("audPracticeC1")
+       .wait("first")
+    ,
+    newTimer(500)
+        .start()
+        .wait()
+    ,
     newAudio("audPracticeC", "C_02.wav")
         .play()
     ,
@@ -152,6 +187,23 @@ PennController.Template(
 
 PennController.Template( 
   variable => PennController( "practiceD" ,
+    newTimer(500)
+        .start()
+        .wait()
+    ,
+    newAudio("audPracticeD1", "D_01.wav")
+        .play()
+    ,
+    newImage("ImageVisPracticeD1", "D_1.jpg")
+        .settings.size(1200,400)
+    ,
+    newCanvas(1250,400)
+        .settings.add(   25 , 0 , getImage("ImageVisPracticeD1") )
+        .print()
+    ,
+    getAudio("audPracticeD1")
+       .wait("first")
+    ,
     newTimer(500)
         .start()
         .wait()
