@@ -45,8 +45,24 @@ PennController( "welcome" ,
 
 // Start typing your code here
 
-PennController.Template( 
-  variable => PennController( "practiceA" ,
+PennController( "practiceA" ,
+    newTimer(500)
+        .start()
+        .wait()
+    ,
+    newAudio("audPracticeA1", "A_01.wav")
+        .play()
+    ,
+    newImage("ImageVisPracticeA1", "A_1.jpg")
+        .settings.size(1200,400)
+    ,
+    newCanvas(1250,400)
+        .settings.add(   25 , 0 , getImage("ImageVisPracticeA1") )
+        .print()
+    ,
+    getAudio("audPracticeA1")
+       .wait("first")
+    ,
     newTimer(500)
         .start()
         .wait()
@@ -80,11 +96,10 @@ PennController.Template(
   )
   .log( "age" , getVar("age") )
   .log( "gender" , getVar("gender") )
-)
 
 
-PennController.Template( 
-  variable => PennController( "practiceB" ,
+
+PennController( "practiceB" ,
     newTimer(500)
         .start()
         .wait()
@@ -135,10 +150,9 @@ PennController.Template(
   )
   .log( "age" , getVar("age") )
   .log( "gender" , getVar("gender") )
-)
 
-PennController.Template( 
-  variable => PennController( "practiceC" ,
+
+PennController( "practiceC" ,
     newTimer(500)
         .start()
         .wait()
@@ -189,10 +203,9 @@ PennController.Template(
   )
   .log( "age" , getVar("age") )
   .log( "gender" , getVar("gender") )
-)
+  
 
-PennController.Template( 
-  variable => PennController( "practiceD" ,
+PennController( "practiceD" ,
     newTimer(500)
         .start()
         .wait()
@@ -243,7 +256,7 @@ PennController.Template(
   )
   .log( "age" , getVar("age") )
   .log( "gender" , getVar("gender") )
-)
+
 
 PennController.Template( 
   variable => PennController( "experiment" ,
