@@ -60,10 +60,10 @@ PennController( "practiceA" ,
         .play()
     ,
     newImage("ImageVisPracticeA1", "A_1.jpg")
-        .settings.size(1200,800)
+        .settings.size(900,600)
     ,
-    newCanvas(1250,400)
-        .settings.add(   0 , -400 , getImage("ImageVisPracticeA1") )
+    newCanvas(1250,600)
+        .settings.add(   175 , 0 , getImage("ImageVisPracticeA1") )
         .print()
     ,
     getAudio("audPracticeA1")
@@ -116,10 +116,10 @@ PennController( "practiceB" ,
         .play()
     ,
     newImage("ImageVisPracticeB1", "B_1.jpg")
-        .settings.size(1200,800)
+        .settings.size(900,600)
     ,
-    newCanvas(1250,400)
-        .settings.add(   0 , -400 , getImage("ImageVisPracticeB1") )
+    newCanvas(1250,600)
+        .settings.add(   175 , 0 , getImage("ImageVisPracticeA1") )
         .print()
     ,
     getAudio("audPracticeB1")
@@ -171,10 +171,10 @@ PennController( "practiceC" ,
         .play()
     ,
     newImage("ImageVisPracticeC1", "C_1.jpg")
-        .settings.size(1200,800)
+        .settings.size(900,600)
     ,
-    newCanvas(1250,400)
-        .settings.add(   0 , -400 , getImage("ImageVisPracticeC1") )
+    newCanvas(1250,600)
+        .settings.add(   175 , 0 , getImage("ImageVisPracticeA1") )
         .print()
     ,
     getAudio("audPracticeC1")
@@ -226,10 +226,10 @@ PennController( "practiceD" ,
         .play()
     ,
     newImage("ImageVisPracticeD1", "D_1.jpg")
-        .settings.size(1200,800)
+        .settings.size(900,600)
     ,
-    newCanvas(1250,400)
-        .settings.add(   0 , -400 , getImage("ImageVisPracticeD1") )
+    newCanvas(1250,600)
+        .settings.add(   175 , 0 , getImage("ImageVisPracticeA1") )
         .print()
     ,
     getAudio("audPracticeD1")
