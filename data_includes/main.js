@@ -40,12 +40,10 @@ PennController( "welcome" ,
 	getTextInput("age").test.text( /RegExp/ )
 					.failure( newText("โปรดกรอกอายุของท่านด้วยค่ะ")
 					.print())
-					.wait()
 	,
 	getDropDown("GenderOptions").test.selected()
 					.failure( newText("โปรดเลือกเพศกำเนิดของท่านด้วยค่ะ")
 					.print())
-					.wait()
 	,
     newButton("Start")
         .print()
