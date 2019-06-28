@@ -40,7 +40,7 @@ PennController( "welcome" ,
     newButton("Start")
         .print()
         .wait(
-		getTextInput("age").test.text( /RegExp/ )
+		getTextInput("age").test.text( /[1-100]/ )
 					.failure( newText("โปรดกรอกอายุของท่านด้วยค่ะ")
 					.print())
 		,
