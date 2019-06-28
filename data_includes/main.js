@@ -1,6 +1,6 @@
 PennController.ResetPrefix(null); // Initiates PennController
 
-PennController.Sequence( "welcome" , "experiment" , "send" , "final" ) //or you can randomize the experiment
+PennController.Sequence( "welcome" , "practice" , "experiment" , "send" , "final" ) //or you can randomize the experiment
 
 PennController( "welcome" ,
     defaultText
@@ -29,6 +29,47 @@ PennController( "welcome" ,
 
 
 // Start typing your code here
+PennController.Template( 
+  variable => PennController( "practice" ,
+    newTimer(500)
+        .start()
+        .wait()
+    ,
+    newAudio("Pdescription", variable.PAudioFile)
+        .play()
+    ,
+    newImage("Pvisible", variable.PImageFile)
+        .settings.size(600,400)
+    ,
+    newImage("Pcov", "Covered_Box.jpg")
+        .settings.size(600,400)
+    ,
+    newCanvas(1250,400)
+        .settings.add(   0 , 100 , getImage("Pvisible") )
+        .settings.add( 650 , 0 , getImage("Pcov") )
+        .print()
+    ,
+    newSelector()
+        .settings.add( getImage("Pvisible") , getImage("Pcov") )
+        .settings.keys(          "F"    ,          "J"   )
+        .settings.log()
+        .wait()
+    ,
+    getAudio("Pdescription")
+       .wait("first")
+    ,
+    newTimer(500)
+        .start()
+        .wait()
+  )
+  .log( "ID" , getVar("ID") )
+  .log( "Item"   , variable.Item   )
+  .log( "Group"  , variable.Group  )
+  .log( "MainCond" , variable.MainCond )
+  .log( "Condition" , variable.Condition )
+)
+
+
 PennController.Template( 
   variable => PennController( "experiment" ,
     newTimer(500)
