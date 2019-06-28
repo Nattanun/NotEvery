@@ -17,9 +17,13 @@ PennController( "welcome" ,
     newTextInput("age")
         .print()
     ,
+    newText("อายุ")
+    .settings.after( getTextInput("age") )
+    .print()
+	,
     newVar("age")
         .settings.global()
-        .set( getTextInput("age") )
+        .set( getTextInput("age") ).wait("first")
     ,
     newDropDown("GenderOptions", "")
     .settings.add("หญิง", "ชาย")
@@ -31,7 +35,7 @@ PennController( "welcome" ,
     ,
 	newVar("gender")
         .settings.global()
-		.set( getDropDown("GenderOptions").wait("first") )
+		.set( getDropDown("GenderOptions") ).wait("first")
 	,
     newButton("Start")
         .print()
@@ -54,7 +58,7 @@ PennController( "practiceA" ,
         .play()
     ,
     newImage("ImageVisPracticeA1", "A_1.jpg")
-        .settings.size(1200,400)
+        .settings.size(1200,800)
     ,
     newCanvas(1250,400)
         .settings.add(   25 , 0 , getImage("ImageVisPracticeA1") )
@@ -63,6 +67,8 @@ PennController( "practiceA" ,
     getAudio("audPracticeA1")
        .wait("first")
     ,
+	clear()
+	,
     newTimer(500)
         .start()
         .wait()
@@ -108,7 +114,7 @@ PennController( "practiceB" ,
         .play()
     ,
     newImage("ImageVisPracticeB1", "B_1.jpg")
-        .settings.size(1200,400)
+        .settings.size(1200,800)
     ,
     newCanvas(1250,400)
         .settings.add(   25 , 0 , getImage("ImageVisPracticeB1") )
@@ -117,6 +123,8 @@ PennController( "practiceB" ,
     getAudio("audPracticeB1")
        .wait("first")
     ,
+	clear()
+	,
     newTimer(500)
         .start()
         .wait()
@@ -161,7 +169,7 @@ PennController( "practiceC" ,
         .play()
     ,
     newImage("ImageVisPracticeC1", "C_1.jpg")
-        .settings.size(1200,400)
+        .settings.size(1200,800)
     ,
     newCanvas(1250,400)
         .settings.add(   25 , 0 , getImage("ImageVisPracticeC1") )
@@ -170,6 +178,8 @@ PennController( "practiceC" ,
     getAudio("audPracticeC1")
        .wait("first")
     ,
+	clear()
+	,
     newTimer(500)
         .start()
         .wait()
@@ -214,7 +224,7 @@ PennController( "practiceD" ,
         .play()
     ,
     newImage("ImageVisPracticeD1", "D_1.jpg")
-        .settings.size(1200,400)
+        .settings.size(1200,800)
     ,
     newCanvas(1250,400)
         .settings.add(   25 , 0 , getImage("ImageVisPracticeD1") )
@@ -222,7 +232,9 @@ PennController( "practiceD" ,
     ,
     getAudio("audPracticeD1")
        .wait("first")
-    ,
+    ,	
+	clear()
+	,
     newTimer(500)
         .start()
         .wait()
