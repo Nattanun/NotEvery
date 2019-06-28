@@ -39,12 +39,13 @@ PennController( "welcome" ,
 	,
     newButton("Start")
         .print()
-        .wait( getDropDown("GenderOptions")
+        .wait( 
+				getDropDown("GenderOptions").test.complete()
 					.failure( newText("โปรดเลือกเพศกำเนิดของท่านด้วยค่ะ")
 					.print() )
 				,
-			   getTextInput("age")
-					.failure( newText("โปรดเลือกเพศกำเนิดของท่านด้วยค่ะ")
+				getTextInput("age").test.complete()
+					.failure( newText("โปรดกรอกอายุของท่านด้วยค่ะ")
 					.print() ) )
     ,
 )
