@@ -37,7 +37,7 @@ PennController( "welcome" ,
         .settings.global()
 		.set( getDropDown("GenderOptions") )
 	,
-	getTextInput("age").test.text( string )
+	getTextInput("age").test.text( /RegExp/ )
 					.failure( newText("โปรดกรอกอายุของท่านด้วยค่ะ")
 					.print())
 					.wait()
@@ -71,7 +71,7 @@ PennController( "practiceA" ,
         .settings.size(900,600)
     ,
     newCanvas(1250,600)
-        .settings.add(   175 , 200 , getImage("ImageVisPracticeA1") )
+        .settings.add(   200 , 400 , getImage("ImageVisPracticeA1") )
         .print()
     ,
     getAudio("audPracticeA1")
@@ -127,7 +127,7 @@ PennController( "practiceB" ,
         .settings.size(900,600)
     ,
     newCanvas(1250,600)
-        .settings.add(   175 , 200 , getImage("ImageVisPracticeA1") )
+        .settings.add(   200 , 400 , getImage("ImageVisPracticeA1") )
         .print()
     ,
     getAudio("audPracticeB1")
@@ -182,7 +182,7 @@ PennController( "practiceC" ,
         .settings.size(900,600)
     ,
     newCanvas(1250,600)
-        .settings.add(   175 , 200 , getImage("ImageVisPracticeA1") )
+        .settings.add(   200 , 400 , getImage("ImageVisPracticeA1") )
         .print()
     ,
     getAudio("audPracticeC1")
@@ -237,7 +237,7 @@ PennController( "practiceD" ,
         .settings.size(900,600)
     ,
     newCanvas(1250,600)
-        .settings.add(   175 , 200 , getImage("ImageVisPracticeA1") )
+        .settings.add(  200 , 400 , getImage("ImageVisPracticeA1") )
         .print()
     ,
     getAudio("audPracticeD1")
