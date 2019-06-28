@@ -12,20 +12,29 @@ PennController( "welcome" ,
     ,
     newText("<p>Press the <strong>F</strong> key for the picture on the left, or the <strong>J</strong> key for the picture on the right.</p>")
     ,
-    newText("<p>Please enter your ID and then click the button below to start the experiment.</p>")
+    newText("<p>Please enter your age and gender and then click the button below to start the experiment.</p>")
     ,
-    newTextInput("ID")
+    newTextInput("age")
+        .print()
+    ,
+    newVar("age")
+        .settings.global()
+        .set( getTextInput("age") )
+		,
+    newTextInput("gender")
         .print()
     ,
     newButton("Start")
         .print()
         .wait()
     ,
-    newVar("ID")
+    newVar("gender")
         .settings.global()
-        .set( getTextInput("ID") )
+        .set( getTextInput("gender") )
 )
-.log( "ID" , getVar("ID") )
+.log( "age" , getVar("age") )
+.log( "gender" , getVar("gender") )
+
 
 
 // Start typing your code here
