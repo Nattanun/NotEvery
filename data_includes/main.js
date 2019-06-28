@@ -16,7 +16,6 @@ PennController( "welcome" ,
     ,
     newTextInput("age")
         .print()
-		.wait()
     ,
     newVar("age")
         .settings.global()
