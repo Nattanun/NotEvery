@@ -56,33 +56,6 @@ PennController( "welcome" ,
 
 // Start typing your code here
 
-newAudio("description", "2fishRoundTank.mp3")
-    .play()
-,
-newText("The fish swim in a tank which is perfectly round")
-    .unfold(2600)
-,
-newImage("two", "2fishRoundTank.png")
-    .settings.size(200,200)
-,
-newImage("one", "1fishSquareTank.png")
-    .settings.size(200,200)
-,
-newCanvas(450,200)
-    .settings.add(   0 , 0 , getImage("two") )
-    .settings.add( 250 , 0 , getImage("one") )
-    .print()
-,
-// newKey("FJ")
-newSelector()
-    .settings.add( getImage("two") , getImage("one") )
-    .settings.keys(          "F"    ,          "J"   )
-    .settings.log()
-    .wait()
-,
-getAudio("description")
-   .wait("first")
-   
 PennController( "practiceA" ,
     newTimer(500)
         .start()
