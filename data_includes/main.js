@@ -274,6 +274,8 @@ PennController.Template(
     ,
     newImage("ImageContext", variable.ContextImageFile)
         .settings.size(900, Math.round(variable.ContextImageFile.height*(900/variable.ContextImageFile.width)))
+	,
+    newCanvas(1250,500)
         .settings.add(   "center at 50%" , "middle at 50%" , getImage("ImageContext") )
         .print()
     ,
