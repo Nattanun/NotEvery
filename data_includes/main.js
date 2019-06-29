@@ -119,9 +119,6 @@ PennController( "practiceA" ,
         .settings.log()
         .wait()
 	,
-    getAudio("audPracticeA")
-       .wait("first")	
-	,
 	newTimer(500)
         .start()
         .wait()
