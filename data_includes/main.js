@@ -40,7 +40,8 @@ PennController( "welcome" ,
 	,
     newButton("Start")
         .print()
-		.wait(getTextInput("age").test.text( /^\d\d$/ )
+		.wait(
+			getTextInput("age").test.text( /^\d\d$/ )
 					.failure( newText("โปรดกรอกอายุของท่านด้วยค่ะ")
 					.print())
 			)
@@ -66,10 +67,10 @@ PennController( "practiceA" ,
         .play()
     ,
     newImage("ImageVisPracticeA1", "A_1.jpg")
-        .settings.size(1200,800)
+        .settings.size(900,600)
     ,
-    newCanvas(1250,400)
-        .settings.add(   0 , -400 , getImage("ImageVisPracticeA1") )
+    newCanvas(1250,1000)
+        .settings.add(   "center at 50%" , 200 , getImage("ImageVisPracticeA1") )
         .print()
     ,
     getAudio("audPracticeA1")
