@@ -69,7 +69,7 @@ PennController( "practiceA" ,
     newImage("ImageVisPracticeA1", "A_1.jpg")
         .settings.size(900,600)
     ,
-    newCanvas(1250,600)
+    newCanvas(1250,500)
         .settings.add(   "center at 50%" , "middle at 50%" , getImage("ImageVisPracticeA1") )
         .print()
     ,
@@ -121,7 +121,7 @@ PennController( "practiceB" ,
     newImage("ImageVisPracticeB1", "B_1.jpg")
         .settings.size(900,600)
     ,
-    newCanvas(1250,600)
+    newCanvas(1250,500)
         .settings.add(   "center at 50%" , "middle at 50%" , getImage("ImageVisPracticeB1") )
         .print()
     ,
@@ -172,7 +172,7 @@ PennController( "practiceC" ,
     newImage("ImageVisPracticeC1", "C_1.jpg")
          .settings.size(900,600)
     ,
-    newCanvas(1250,600)
+    newCanvas(1250,500)
         .settings.add(   "center at 50%" , "middle at 50%" , getImage("ImageVisPracticeC1") )
         .print()
     ,
@@ -223,7 +223,7 @@ PennController( "practiceD" ,
     newImage("ImageVisPracticeD1", "D_1.jpg")
          .settings.size(900,600)
     ,
-    newCanvas(1250,600)
+    newCanvas(1250,500)
         .settings.add(   "center at 50%" , "middle at 50%" , getImage("ImageVisPracticeD1") )
         .print()
     ,
@@ -269,12 +269,24 @@ PennController.Template(
         .start()
         .wait()
     ,
+	newAudio("context", variable.ContextAudioFile)
+        .play()
+    ,
+    newImage("ImageContext", variable.ContextImageFile)
+        .settings.size(900,300)
+    ,
+    newCanvas(1250,500)
+        .settings.add(   "center at 50%" , "middle at 50%" , getImage("ImageVisPracticeA1") )
+        .print()
+    ,
+    getAudio("context")
+       .wait("first")
+    ,
+	clear()
+	,
     newAudio("description", variable.AudioFile)
         .play()
     ,
-    //newText(variable.Description)
-    //    .unfold(2600)
-    //,
     newImage("visible", variable.ImageFile)
         .settings.size(600,200)
     ,
