@@ -74,7 +74,6 @@ PennController( "practiceA" ,
 	,
     newAudio("audPracticeA", "A_02.wav")
         .play()
-		.wait()
     ,
     newImage("ImageVisPracticeA", "A_2.jpg")
         .settings.size(600,400)
