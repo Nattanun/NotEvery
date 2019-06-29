@@ -67,8 +67,8 @@ PennController( "practiceA" ,
     newImage("ImageVisPracticeA1", "A_1.jpg")
         .settings.size(900,600)
     ,
-    newCanvas(1250,600)
-        .settings.add(   200 , 500 , getImage("ImageVisPracticeA1") )
+    newCanvas(900,600)
+        .settings.add(   0 , 0 , getImage("ImageVisPracticeA1") )
         .print()
     ,
     getAudio("audPracticeA1")
