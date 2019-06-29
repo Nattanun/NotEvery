@@ -56,7 +56,7 @@ PennController( "welcome" ,
 // Start typing your code here
 
 PennController( "practiceA" ,
-    newTimer(500)
+    newTimer(1000)
         .start()
         .wait()
     ,
@@ -66,8 +66,8 @@ PennController( "practiceA" ,
     newImage("ImageVisPracticeA1", "A_1.jpg")
         .settings.size(900,600)
     ,
-    newCanvas(900,600)
-        .settings.add(   200 , 200 , getImage("ImageVisPracticeA1") )
+    newCanvas(2000,600)
+        .settings.add(   400 , 300 , getImage("ImageVisPracticeA1") )
         .print()
     ,
 	clear()
@@ -91,10 +91,6 @@ PennController( "practiceA" ,
         .settings.keys(          "F"    ,          "J"   )
         .settings.log()
         .wait()
-    ,
-    newTimer(500)
-        .start()
-        .wait()
   )
   .log( "age" , getVar("age") )
   .log( "gender" , getVar("gender") )
@@ -102,7 +98,7 @@ PennController( "practiceA" ,
 
 
 PennController( "practiceB" ,
-    newTimer(500)
+    newTimer(1000)
         .start()
         .wait()
     ,
