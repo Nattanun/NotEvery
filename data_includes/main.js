@@ -41,7 +41,7 @@ PennController( "welcome" ,
 	,
 	getDropDown("GenderOptions").test.selected()
 					.failure( newText("โปรดเลือกเพศกำเนิดของท่านด้วยค่ะ")
-					.print().wait("first")
+					.print()).wait("first")
 	,
     newButton("Start")
         .print()
