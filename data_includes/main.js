@@ -1,6 +1,6 @@
 PennController.ResetPrefix(null); // Initiates PennController
 
-PennController.Sequence( "welcome" , "practiceA" , "practiceB" , "practiceC" , "practiceD" , "experiment" , "send" , "final" ) //or you can randomize the experiment
+PennController.Sequence( "welcome" , "practiceA" , "experiment" , "send" , "final" ) //or you can randomize the experiment
 
 PennController( "welcome" ,
     defaultText
@@ -39,13 +39,14 @@ PennController( "welcome" ,
 	,
     newButton("Start")
         .print()
-        .wait(getTextInput("age").test.text( /^\d\d$/ )
+        .wait(
+		getTextInput("age").test.text( /^\d\d$/ )
 					.failure( newText("โปรดกรอกอายุของท่านด้วยค่ะ")
-					.print())
+					.print().remove())
 		,
 		getDropDown("GenderOptions").test.selected()
 					.failure( newText("โปรดเลือกเพศกำเนิดของท่านด้วยค่ะ")
-					.print())
+					.print().remove())
 			)
 )
 .log( "age" , getVar("age") )
@@ -55,33 +56,6 @@ PennController( "welcome" ,
 
 // Start typing your code here
 
-newAudio("description", "2fishRoundTank.mp3")
-    .play()
-,
-newText("The fish swim in a tank which is perfectly round")
-    .unfold(2600)
-,
-newImage("two", "2fishRoundTank.png")
-    .settings.size(200,200)
-,
-newImage("one", "1fishSquareTank.png")
-    .settings.size(200,200)
-,
-newCanvas(450,200)
-    .settings.add(   0 , 0 , getImage("two") )
-    .settings.add( 250 , 0 , getImage("one") )
-    .print()
-,
-// newKey("FJ")
-newSelector()
-    .settings.add( getImage("two") , getImage("one") )
-    .settings.keys(          "F"    ,          "J"   )
-    .settings.log()
-    .wait()
-,
-getAudio("description")
-   .wait("first")
-   
 PennController( "practiceA" ,
     newTimer(500)
         .start()
@@ -93,8 +67,8 @@ PennController( "practiceA" ,
     newImage("ImageVisPracticeA1", "A_1.jpg")
         .settings.size(900,600)
     ,
-    newCanvas(1250,400)
-        .settings.add(   "center at 50%" , "middle at 50%" , getImage("ImageVisPracticeA1") )
+    newCanvas(1250,1000)
+        .settings.add(   "center at 50%" , 200 , getImage("ImageVisPracticeA1") )
         .print()
     ,
 	clear()
@@ -120,164 +94,6 @@ PennController( "practiceA" ,
         .wait()
 	,
 	newTimer(500)
-        .start()
-        .wait()
-  )
-  .log( "age" , getVar("age") )
-  .log( "gender" , getVar("gender") )
-
-
-
-PennController( "practiceB" ,
-    newTimer(1000)
-        .start()
-        .wait()
-    ,
-    newAudio("audPracticeB1", "B_01.wav")
-        .play()
-    ,
-    newImage("ImageVisPracticeB1", "B_1.jpg")
-        .settings.size(900,600)
-    ,
-    newCanvas(900,600)
-        .settings.add(   200 , 200 , getImage("ImageVisPracticeB1") )
-        .print()
-    ,
-    getAudio("audPracticeB1")
-       .wait("first")
-    ,
-	clear()
-	,
-    newAudio("audPracticeB", "B_02.wav")
-        .play()
-    ,
-    newImage("ImageVisPracticeB", "B_2.jpg")
-        .settings.size(600,400)
-    ,
-    newImage("Pcov", "Covered_Box.jpg")
-        .settings.size(600,400)
-    ,
-    newCanvas(1250,400)
-        .settings.add(   0 , 0 , getImage("ImageVisPracticeB") )
-        .settings.add( 650 , 0 , getImage("Pcov") )
-        .print()
-    ,
-    newSelector()
-        .settings.add( getImage("ImageVisPracticeB") , getImage("Pcov") )
-        .settings.keys(          "F"    ,          "J"   )
-        .settings.log()
-        .wait()
-    ,
-    getAudio("audPracticeB")
-       .wait("first")
-    ,
-    newTimer(500)
-        .start()
-        .wait()
-  )
-  .log( "age" , getVar("age") )
-  .log( "gender" , getVar("gender") )
-
-
-PennController( "practiceC" ,
-    newTimer(500)
-        .start()
-        .wait()
-    ,
-    newAudio("audPracticeC1", "C_01.wav")
-        .play()
-    ,
-    newImage("ImageVisPracticeC1", "C_1.jpg")
-        .settings.size(900,600)
-    ,
-    newCanvas(900,600)
-        .settings.add(   200 , 200 , getImage("ImageVisPracticeC1") )
-        .print()
-    ,
-    getAudio("audPracticeC1")
-       .wait("first")
-    ,
-	clear()
-	,
-    newAudio("audPracticeC", "C_02.wav")
-        .play()
-    ,
-    newImage("ImageVisPracticeC", "C_2.jpg")
-        .settings.size(600,400)
-    ,
-    newImage("Pcov", "Covered_Box.jpg")
-        .settings.size(600,400)
-    ,
-    newCanvas(1250,400)
-        .settings.add(   0 , 0 , getImage("ImageVisPracticeC") )
-        .settings.add( 650 , 0 , getImage("Pcov") )
-        .print()
-    ,
-    newSelector()
-        .settings.add( getImage("ImageVisPracticeC") , getImage("Pcov") )
-        .settings.keys(          "F"    ,          "J"   )
-        .settings.log()
-        .wait()
-    ,
-    getAudio("audPracticeC")
-       .wait("first")
-    ,
-    newTimer(500)
-        .start()
-        .wait()
-  )
-  .log( "age" , getVar("age") )
-  .log( "gender" , getVar("gender") )
-  
-
-PennController( "practiceD" ,
-    newTimer(500)
-        .start()
-        .wait()
-    ,
-    newAudio("audPracticeD1", "D_01.wav")
-        .play()
-    ,
-    newImage("ImageVisPracticeD1", "D_1.jpg")
-        .settings.size(900,600)
-    ,
-    newCanvas(900,600)
-        .settings.add(  200 , 200 , getImage("ImageVisPracticeD1") )
-        .print()
-    ,
-    getAudio("audPracticeD1")
-       .wait("first")
-    ,	
-	clear()
-	,
-    newTimer(500)
-        .start()
-        .wait()
-    ,
-    newAudio("audPracticeD", "D_02.wav")
-        .play()
-    ,
-    newImage("ImageVisPracticeD", "D_2.jpg")
-        .settings.size(600,400)
-    ,
-    newImage("Pcov", "Covered_Box.jpg")
-        .settings.size(600,400)
-    ,
-    newCanvas(1250,400)
-        .settings.add(   0 , 0 , getImage("ImageVisPracticeD") )
-        .settings.add( 650 , 0 , getImage("Pcov") )
-        .print()
-    ,
-    newSelector()
-        .settings.add( getImage("ImageVisPracticeD") , getImage("Pcov") )
-        .settings.keys(          "F"    ,          "J"   )
-        .settings.log()
-        .wait()
-    ,
-    getAudio("audPracticeD")
-       .wait("first")
-    ,
-    newTimer(500)
         .start()
         .wait()
   )
