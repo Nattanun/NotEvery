@@ -273,7 +273,7 @@ PennController.Template(
         .play()
     ,
     newImage("ImageContext", variable.ContextImageFile)
-        .settings.size(900,300)
+        .settings.size(900,250)
     ,
     newCanvas(1250,500)
         .settings.add(   "center at 50%" , "middle at 50%" , getImage("ImageContext") )
@@ -288,7 +288,7 @@ PennController.Template(
         .play()
     ,
     newImage("visible", variable.ImageFile)
-        .settings.size(600,200)
+        .settings.size(600,167)
     ,
     newImage("cov", "Covered_Box.jpg")
         .settings.size(600,400)
