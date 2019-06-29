@@ -37,6 +37,10 @@ PennController( "welcome" ,
         .settings.global()
 		.set( getDropDown("GenderOptions") )
 	,
+    newButton("Start")
+        .print()
+        .wait()
+	,
 	getTextInput("age").test.text( /^\d\d$/ )
 			.failure( newText("โปรดกรอกอายุของท่านด้วยค่ะ")
 					.print())
@@ -46,10 +50,6 @@ PennController( "welcome" ,
 					.failure( newText("โปรดเลือกเพศกำเนิดของท่านด้วยค่ะ")
 					.print())
 					.wait("first")
-	,
-    newButton("Start")
-        .print()
-        .wait()
 )
 .log( "age" , getVar("age") )
 .log( "gender" , getVar("gender") )
