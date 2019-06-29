@@ -76,10 +76,6 @@ PennController( "practiceA" ,
     ,
 	clear()
 	,
-    newTimer(500)
-        .start()
-        .wait()
-    ,
     newAudio("audPracticeA", "A_02.wav")
         .play()
     ,
@@ -132,10 +128,6 @@ PennController( "practiceB" ,
     ,
 	clear()
 	,
-    newTimer(500)
-        .start()
-        .wait()
-    ,
     newAudio("audPracticeB", "B_02.wav")
         .play()
     ,
@@ -187,10 +179,6 @@ PennController( "practiceC" ,
     ,
 	clear()
 	,
-    newTimer(500)
-        .start()
-        .wait()
-    ,
     newAudio("audPracticeC", "C_02.wav")
         .play()
     ,
@@ -242,10 +230,6 @@ PennController( "practiceD" ,
     ,	
 	clear()
 	,
-    newTimer(500)
-        .start()
-        .wait()
-    ,
     newAudio("audPracticeD", "D_02.wav")
         .play()
     ,
