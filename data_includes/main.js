@@ -39,15 +39,17 @@ PennController( "welcome" ,
 	,
     newButton("Start")
         .print()
-        .wait(
+        .wait()
+	,
+	getButton("start" , "Start")
+		.wait(
 		getTextInput("age").test.text( /^\d\d$/ )
 					.failure( newText("โปรดกรอกอายุของท่านด้วยค่ะ")
-					.print())
+					.print().remove())
 		,
 		getDropDown("GenderOptions").test.selected()
 					.failure( newText("โปรดเลือกเพศกำเนิดของท่านด้วยค่ะ")
-					.print())
-		)
+					.print()).remove())
 )
 .log( "age" , getVar("age") )
 .log( "gender" , getVar("gender") )
@@ -94,7 +96,7 @@ PennController( "practiceA" ,
         .wait()
     ,
     getAudio("audPracticeA")
-       .wait("first")
+       .wait()
     ,
     newTimer(500)
         .start()
