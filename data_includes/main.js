@@ -48,6 +48,7 @@ PennController( "welcome" ,
 		getDropDown("GenderOptions").test.selected()
 					.failure( newText("โปรดเลือกเพศกำเนิดของท่านด้วยค่ะ")
 					.print().remove())
+			)
 .log( "age" , getVar("age") )
 .log( "gender" , getVar("gender") )
 
