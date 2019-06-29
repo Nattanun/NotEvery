@@ -273,9 +273,7 @@ PennController.Template(
         .play()
     ,
     newImage("ImageContext", variable.ContextImageFile)
-        .settings.size(900,250)
-    ,
-    newCanvas(1250,500)
+        .settings.size(900, Math.round(variable.ContextImageFile.height*(900/variable.ContextImageFile.width))
         .settings.add(   "center at 50%" , "middle at 50%" , getImage("ImageContext") )
         .print()
     ,
@@ -294,7 +292,7 @@ PennController.Template(
         .settings.size(600,400)
     ,
     newCanvas(1250,400)
-        .settings.add(   0 , 100 , getImage("visible") )
+        .settings.add( "center at 50%" , "middle at 50%" , getImage("visible") )
         .settings.add( 650 , 0 , getImage("cov") )
         .print()
     ,
