@@ -276,7 +276,7 @@ PennController.Template(
         .settings.size(900,300)
     ,
     newCanvas(1250,500)
-        .settings.add(   "center at 50%" , "middle at 50%" , getImage("ImageVisPracticeA1") )
+        .settings.add(   "center at 50%" , "middle at 50%" , getImage("ImageContext") )
         .print()
     ,
     getAudio("context")
