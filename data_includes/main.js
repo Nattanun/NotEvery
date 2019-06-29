@@ -69,7 +69,7 @@ PennController( "practiceA" ,
     newImage("ImageVisPracticeA1", "A_1.jpg")
         .settings.size(900,600)
     ,
-    newCanvas(1250,1000)
+    newCanvas(1250,600)
         .settings.add(   "center at 50%" , "middle at 50%" , getImage("ImageVisPracticeA1") )
         .print()
     ,
@@ -121,7 +121,7 @@ PennController( "practiceB" ,
     newImage("ImageVisPracticeB1", "B_1.jpg")
         .settings.size(900,600)
     ,
-    newCanvas(1250,1000)
+    newCanvas(1250,600)
         .settings.add(   "center at 50%" , "middle at 50%" , getImage("ImageVisPracticeB1") )
         .print()
     ,
@@ -172,7 +172,7 @@ PennController( "practiceC" ,
     newImage("ImageVisPracticeC1", "C_1.jpg")
          .settings.size(900,600)
     ,
-    newCanvas(1250,1000)
+    newCanvas(1250,600)
         .settings.add(   "center at 50%" , "middle at 50%" , getImage("ImageVisPracticeC1") )
         .print()
     ,
@@ -223,7 +223,7 @@ PennController( "practiceD" ,
     newImage("ImageVisPracticeD1", "D_1.jpg")
          .settings.size(900,600)
     ,
-    newCanvas(1250,1000)
+    newCanvas(1250,600)
         .settings.add(   "center at 50%" , "middle at 50%" , getImage("ImageVisPracticeD1") )
         .print()
     ,
