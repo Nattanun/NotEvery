@@ -230,6 +230,10 @@ PennController( "practiceD" ,
     ,	
 	clear()
 	,
+    newTimer(500)
+        .start()
+        .wait()
+    ,
     newAudio("audPracticeD", "D_02.wav")
         .play()
     ,
