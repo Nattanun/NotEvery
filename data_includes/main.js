@@ -71,9 +71,6 @@ PennController( "practiceA" ,
         .settings.add(   200 , 200 , getImage("ImageVisPracticeA1") )
         .print()
     ,
-    getAudio("audPracticeA1")
-       .wait("first")
-    ,
 	clear()
 	,
     newAudio("audPracticeA", "A_02.wav")
