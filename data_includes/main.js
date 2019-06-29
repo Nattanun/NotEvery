@@ -288,7 +288,7 @@ PennController.Template(
         .play()
     ,
     newImage("visible", variable.ImageFile)
-        .settings.size(600,167)
+        .settings.size(600, Math.round(img.height*(600/img.width)))
     ,
     newImage("cov", "Covered_Box.jpg")
         .settings.size(600,400)
