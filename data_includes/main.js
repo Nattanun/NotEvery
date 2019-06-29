@@ -93,8 +93,8 @@ PennController( "practiceA" ,
     newImage("ImageVisPracticeA1", "A_1.jpg")
         .settings.size(900,600)
     ,
-    newCanvas(2000,600)
-        .settings.add(   400 , 300 , getImage("ImageVisPracticeA1") )
+    newCanvas(1250,400)
+        .settings.add(   "center at 50%" , "middle at 50%" , getImage("ImageVisPracticeA1") )
         .print()
     ,
 	clear()
