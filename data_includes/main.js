@@ -237,12 +237,50 @@ PennController( "practiceA" ,
 	,
     getImage("rarrow").settings.hidden()
 	,
-    newSelector()
+    newSelector("selectA")
+		.settings.once()
         .settings.add( getImage("ImageVisPracticeA") , getImage("Pcov") )
         .settings.keys(          "F"    ,          "J"   )
         .settings.log()
         .wait()
     ,
+	newAudio("positive", "Correct.wav")
+    ,
+	newAudio("negative", "Incorrect.wav")
+    ,
+    getSelector("selectA")           // Test whether the target image was selected
+        .test.selected( getImage("Pcov") )
+        .success(
+            getAudio("positive")   // Positive feedback if the test succeeds
+                .wait("first")
+        )
+        .failure(
+            getAudio("negative")   // Negative feedback if the test fails
+                .wait("first")
+        )
+	,
+    newAudio("correctRight", "CorrectRight.wav")
+        .play()
+    ,
+	getAudio("correctRight")
+		.wait("first")
+	,
+	newAudio("repeatA", "A_02.wav")
+        .play()
+    ,
+	getAudio("repeatA")
+		.wait("first")
+	,
+	newTimer(500)
+        .start()
+        .wait()
+    ,
+	newAudio("tryagain", "PracticeThreeMore.wav")
+        .play()
+    ,
+    getAudio("tryagain")
+       .wait("first")
+	,
     newTimer(500)
         .start()
         .wait()
