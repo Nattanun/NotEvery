@@ -63,7 +63,7 @@ PennController( "welcome" ,
     .settings.add("35", "87", "150", "200", "340")
     .print()
 	,
-    newText("<p>(1) เสียงที่ท่านได้ยินข้างต้นตรงกับเลขใดต่อไปนี้</p>")
+    newText("<p>(1) เสียงที่ท่านได้ยินข้างต้นตรงกับเลขใดคะ</p>")
     .settings.after( getDropDown("micTestChoice") )
     .print()
     ,
@@ -75,13 +75,12 @@ PennController( "welcome" ,
     .settings.once()
     .settings.log()
     .print()
-    .wait()
 	,
     newDropDown("micTestChoice2", "")
     .settings.add("23", "56", "160", "367", "450")
     .print()
 	,
-    newText("<p>(2) เสียงที่ท่านได้ยินข้างต้นตรงกับเลขใดต่อไปนี้</p>")
+    newText("<p>(2) เสียงที่ท่านได้ยินข้างต้นตรงกับเลขใดคะ</p>")
     .settings.after( getDropDown("micTestChoice2") )
     .print()
     ,
@@ -142,7 +141,7 @@ PennController( "practiceA" ,
     ,
 	clear()
 	,
-	newTimer(250)
+	newTimer(500)
         .start()
         .wait()
     ,
@@ -198,7 +197,7 @@ PennController( "practiceB" ,
     ,
 	clear()
 	,
-	newTimer(250)
+	newTimer(500)
         .start()
         .wait()
     ,
@@ -253,7 +252,7 @@ PennController( "practiceC" ,
     ,
 	clear()
 	,
-	newTimer(250)
+	newTimer(500)
         .start()
         .wait()
     ,
@@ -308,7 +307,7 @@ PennController( "practiceD" ,
     ,	
 	clear()
 	,
-	newTimer(250)
+	newTimer(500)
         .start()
         .wait()
     ,
@@ -364,7 +363,7 @@ PennController.Template(
     ,
 	clear()
 	,
-	newTimer(250)
+	newTimer(500)
         .start()
         .wait()
     ,
