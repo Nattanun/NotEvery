@@ -1,6 +1,6 @@
 PennController.ResetPrefix(null); // Initiates PennController
 
-PennController.Sequence( "consent" , "welcome" , "practiceA" , "practiceB" , "practiceC" , "practiceD" , "experiment" , "send" , "final" ) //or you can randomize the experiment
+PennController.Sequence( "consent" , "welcome" , "mictest" , "practiceA" , "practiceB" , "practiceC" , "practiceD" , "experiment" , "send" , "final" ) //or you can randomize the experiment
 
 PennController( "consent",
 	newHtml("consent", "IbexConsentThai2019.html")
@@ -20,13 +20,13 @@ PennController( "welcome" ,
     defaultText
         .print()
     ,
-    newText("<p>Welcome!</p>")
+    newText("<p>ยินดีต้อนรับค่ะ</p>")
     ,
-    newText("<p>In this experiment, you will have to report which of two pictures matches a description.</p>")
+    newText("<p>ในการทดลองนี้ ท่านจะต้องเลือกว่ารูปภาพรูปไหนในสองรูปตรงกับเสียงบรรยายนะคะ</p>")
     ,
-    newText("<p>Press the <strong>F</strong> key for the picture on the left, or the <strong>J</strong> key for the picture on the right.</p>")
+    newText("<p>ท่านสามารถคลิกที่รูปภาพโดยตรง หรือกดปุ่ม <strong>F</strong> เพื่อเลือกรูปทางด้านซ้าย หรือกดปุ่ม <strong>J</strong> เพื่อเลือกรูปทางด้านขวาค่ะ</p>")
     ,
-    newText("<p>Please enter your age and gender and then click the button below to start the experiment.</p>")
+    newText("<p>โปรดกรอกอายุและเลือกเพศกำเนิดของท่าน แล้วกดปุ่มด้านล่างเพื่อเริ่มต้นการทดลองค่ะ</p>")
     ,
     newTextInput("age")
 		.settings.length(2)
@@ -52,7 +52,7 @@ PennController( "welcome" ,
         .settings.global()
 		.set( getDropDown("GenderOptions") )
 	,
-    newButton("Start")
+    newButton("เริ่มต้นการทดลอง")
         .print()
 		.wait(
 			getTextInput("age").test.text( /^\d\d$/ )
@@ -68,7 +68,42 @@ PennController( "welcome" ,
 .log( "age" , getVar("age") )
 .log( "gender" , getVar("gender") )
 
-
+PennController( "mictest" ,
+	defaultText
+        .print()
+    ,
+    newText("<p>กรุณาใส่หูฟังและทดสอบว่าท่านได้ยินเสียงหรือไม่นะคะ</p>")
+    ,
+	newAudio("micTest1", "MicTest1.wav")
+    .settings.once()
+    .settings.log()
+    .print()
+    .wait()
+	,
+	newButton("play", "Play")
+    .print()
+    .wait()
+	,
+    newTextInput("age")
+        .print()
+    ,
+	newAudio("micTest2", "MicTest2.wav")
+    .settings.once()
+    .settings.log()
+    .print()
+    .wait()
+	,
+	newButton("play", "Play")
+    .print()
+    .wait()
+	,
+    newText("<p></p>")
+    ,
+    newText("<p>ท่านสามารถคลิกที่รูปภาพโดยตรง หรือกดปุ่ม <strong>F</strong> เพื่อเลือกรูปทางด้านซ้าย หรือกดปุ่ม <strong>J</strong> เพื่อเลือกรูปทางด้านขวาค่ะ</p>")
+    ,
+    newText("<p>โปรดกรอกอายุและเลือกเพศกำเนิดของท่าน แล้วกดปุ่มด้านล่างเพื่อเริ่มต้นการทดลองค่ะ</p>")
+    
+)
 
 // Start typing your code here
 
