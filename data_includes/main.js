@@ -65,6 +65,9 @@ PennController( "welcome" ,
 					.print())
 			)
 	,
+    newText("(กดสองครั้ง)")
+	.print()
+    ,
 	newText("<p><b>กรุณาใส่หูฟังและกดปุ่มเล่นเสียง เพื่อทดสอบว่าท่านได้ยินเสียงหรือไม่นะคะ</b></p>")
     ,
 	newAudio("micTest1", "MicTest1.wav")
@@ -110,9 +113,11 @@ PennController( "welcome" ,
 				.print()))
 		.wait(getDropDown("micTestChoice2").test.selected("56")
 					.failure( newText("โปรดกดฟังเสียงและเลือกคำตอบที่ตรงกับเสียงค่ะ")
-					.print())
+					.print()))
 	,
-		)
+    newText("(กดสองครั้ง)")
+	.print()
+    ,
 )
 .log( "age" , getVar("age") )
 .log( "gender" , getVar("gender") )
