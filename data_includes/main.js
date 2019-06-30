@@ -58,7 +58,6 @@ PennController( "welcome" ,
     .settings.once()
     .settings.log()
     .print()
-    .wait()
 	,
     newDropDown("micTestChoice", "")
     .settings.add("35", "87", "150", "200", "340")
