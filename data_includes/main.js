@@ -26,7 +26,7 @@ PennController( "welcome" ,
     ,	
     //newText("<p>ท่านสามารถคลิกที่รูปภาพโดยตรง หรือกดปุ่ม <strong>F</strong> เพื่อเลือกรูปทางด้านซ้าย หรือกดปุ่ม <strong>J</strong> เพื่อเลือกรูปทางด้านขวาค่ะ</p>")
     //,
-    newText("<p>โปรดกรอกอายุและเลือกเพศกำเนิดของท่าน และกดปุ่มยืนยันคำตอบ<i>สองครั้ง</i>ค่ะ</p>")
+    newText("<p>โปรดกรอกอายุและเลือกเพศกำเนิดของท่าน และกดปุ่มยืนยันคำตอบสองครั้งค่ะ</p>")
     ,
     newTextInput("age")
 		.settings.length(2)
@@ -184,6 +184,9 @@ PennController( "practiceA" ,
     newImage("Pcov", "Covered_Box.jpg")
         .settings.size(600,400)
     ,
+	newImage("hiddenPracticeA", "A_3.jpg")
+        .settings.size(600,400)
+    ,
     newImage("larrow", "Left_Arrow.jpg")
         .settings.size(100,100)
     ,
@@ -195,6 +198,7 @@ PennController( "practiceA" ,
         .settings.add( 650 , 0 , getImage("rarrow").settings.hidden() )
         .settings.add(   0 , 100 , getImage("ImageVisPracticeA") )
         .settings.add( 650 , 100 , getImage("Pcov") )
+		.settings.add( 650 , 100 , getImage("hiddenPracticeA").settings.hidden() )
         .print()
     ,
     getAudio("audPracticeA")
@@ -245,6 +249,10 @@ PennController( "practiceA" ,
         .settings.log()
         .wait()
     ,
+	newTimer(250)
+        .start()
+        .wait()
+    ,
     getSelector("selectA")           // Test whether the target image was selected
         .test.selected( getImage("Pcov") )
         .success(
@@ -256,6 +264,12 @@ PennController( "practiceA" ,
                 .wait()
         )
 	,
+    getImage("hiddenPracticeA").settings.visible()
+	,
+	newTimer(250)
+        .start()
+        .wait()
+    ,
     newAudio("correctRight", "CorrectRight.wav")
         .play()
     ,
@@ -320,21 +334,95 @@ PennController( "practiceB" ,
     newImage("Pcov", "Covered_Box.jpg")
         .settings.size(600,400)
     ,
-    newCanvas(1250,400)
-        .settings.add(   0 , 0 , getImage("ImageVisPracticeB") )
-        .settings.add( 650 , 0 , getImage("Pcov") )
+	newImage("hiddenPracticeB", "B_3.jpg")
+        .settings.size(600,400)
+    ,
+    newImage("larrow", "Left_Arrow.jpg")
+        .settings.size(100,100)
+    ,
+    newImage("rarrow", "Right_Arrow.jpg")
+        .settings.size(100,100)
+    ,
+    newCanvas(1250,500)
+        .settings.add( 550 , 0 , getImage("larrow").settings.hidden() )
+        .settings.add( 650 , 0 , getImage("rarrow").settings.hidden() )
+        .settings.add(   0 , 100 , getImage("ImageVisPracticeB") )
+        .settings.add( 650 , 100 , getImage("Pcov") )
+		.settings.add( 650 , 100 , getImage("hiddenPracticeB").settings.hidden() )
         .print()
     ,
-    newSelector()
+    getAudio("audPracticeB")
+       .wait("first")
+    ,
+	newTimer(500)
+        .start()
+        .wait()
+    ,
+    getImage("larrow").settings.visible()
+	,
+    newAudio("left", "Left.wav")
+        .play()
+    ,
+	getAudio("left")
+		.wait("first")
+	,
+    getImage("larrow").settings.hidden()
+	,
+	newTimer(1000)
+        .start()
+        .wait()
+    ,
+    getImage("rarrow").settings.visible()
+	,
+    newAudio("orright", "orRight.wav")
+        .play()
+    ,
+	getAudio("orright")
+		.wait("first")
+	,
+    getImage("rarrow").settings.hidden()
+	,
+    newSelector("selectB")
+		.settings.once()
         .settings.add( getImage("ImageVisPracticeB") , getImage("Pcov") )
         .settings.keys(          "F"    ,          "J"   )
         .settings.log()
         .wait()
     ,
-    getAudio("audPracticeB")
-       .wait("first")
+	newTimer(250)
+        .start()
+        .wait()
     ,
-    newTimer(500)
+    getSelector("selectB")           // Test whether the target image was selected
+        .test.selected( getImage("ImageVisPracticeB") )
+        .success(
+            newAudio("positive", "Correct.wav").play()   // Positive feedback if the test succeeds
+                .wait()
+        )
+        .failure(
+            newAudio("negative", "Incorrect.wav").play()   // Negative feedback if the test fails
+                .wait()
+        )
+	,
+    getImage("hiddenPracticeB").settings.visible()
+	,
+	newTimer(250)
+        .start()
+        .wait()
+    ,
+    newAudio("correctLeft", "CorrectLeft.wav")
+        .play()
+    ,
+	getAudio("correctLeft")
+		.wait("first")
+	,
+	newAudio("repeatB", "B_02.wav")
+        .play()
+    ,
+	getAudio("repeatB")
+		.wait("first")
+	,
+	newTimer(500)
         .start()
         .wait()
   )
