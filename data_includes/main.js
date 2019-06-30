@@ -1,6 +1,6 @@
 PennController.ResetPrefix(null); // Initiates PennController
 
-PennController.Sequence( "consent" , "welcome" , "mictest" , "practiceA" , "practiceB" , "practiceC" , "practiceD" , "experiment" , "send" , "final" ) //or you can randomize the experiment
+PennController.Sequence( "consent" , "welcome" , "practiceA" , "practiceB" , "practiceC" , "practiceD" , "experiment" , "send" , "final" ) //or you can randomize the experiment
 
 PennController( "consent",
 	newHtml("consent", "IbexConsentThai2019.html")
@@ -23,8 +23,10 @@ PennController( "welcome" ,
     newText("<p>ยินดีต้อนรับค่ะ</p>")
     ,
     newText("<p>ในการทดลองนี้ ท่านจะต้องเลือกว่ารูปภาพรูปไหนในสองรูปตรงกับเสียงบรรยายนะคะ</p>")
+    ,	
+    newText("<p>ท่านสามารถคลิกที่รูปภาพโดยตรง หรือกดปุ่ม <strong>F</strong> เพื่อเลือกรูปทางด้านซ้าย หรือกดปุ่ม <strong>J</strong> เพื่อเลือกรูปทางด้านขวาค่ะ</p>")
     ,
-    newText("<p>โปรดกรอกอายุและเลือกเพศกำเนิดของท่าน แล้วกดปุ่มด้านล่างเพื่อเริ่มต้นการทดลองค่ะ</p>")
+    newText("<p>โปรดกรอกอายุและเลือกเพศกำเนิดของท่านค่ะ</p>")
     ,
     newTextInput("age")
 		.settings.length(2)
@@ -50,6 +52,32 @@ PennController( "welcome" ,
         .settings.global()
 		.set( getDropDown("GenderOptions") )
 	,
+	newText("<p>กรุณาใส่หูฟังและทดสอบว่าท่านได้ยินเสียงหรือไม่นะคะ</p>")
+    ,
+	newAudio("micTest1", "MicTest1.wav")
+    .settings.once()
+    .settings.log()
+    .print()
+    .wait()
+	,
+	newButton("play", "Play")
+    .print()
+    .wait()
+	,
+    newDropDown("micTestChoice", "")
+    .settings.add("35", "87", "150", "200", "340")
+    .print()
+	,
+    newText("เสียงที่ท่านได้ยินตรงกับเลขใดต่อไปนี้")
+    .settings.after( getDropDown("micTestChoice") )
+    .print()
+    ,
+	newVar("mic")
+        .settings.global()
+		.set( getDropDown("micTestChoice") )
+	,
+	newText(<p>"เมื่อกรอกและเลือกคำตอบทั้งหมดแล้ว กดปุ่มด้านล่างเพื่อเริ่มต้นการทดลองค่ะ"</p>)
+	,
     newButton("เริ่มต้นการทดลอง")
         .print()
 		.wait(
@@ -62,50 +90,18 @@ PennController( "welcome" ,
 					.failure( newText("โปรดเลือกเพศกำเนิดของท่านด้วยค่ะ")
 					.print())
 			)
+		.wait(
+		getDropDown("micTestChoice").test.selected("200")
+					.failure( newText("โปรดกดฟังเสียงและเลือกคำตอบที่ตรงกับเสียงค่ะ")
+					.print())
+			)
 )
 .log( "age" , getVar("age") )
 .log( "gender" , getVar("gender") )
+.log( "mic" , getVar("mic") )
 
 
 // Start typing your code here
-
-
-PennController( "mictest" ,
-	defaultText
-        .print()
-    ,
-    newText("<p>กรุณาใส่หูฟังและทดสอบว่าท่านได้ยินเสียงหรือไม่นะคะ</p>")
-    ,
-	newAudio("micTest1", "MicTest1.wav")
-    .settings.once()
-    .settings.log()
-    .print()
-    .wait()
-	,
-	newButton("play", "Play")
-    .print()
-    .wait()
-	,
-    newTextInput("age")
-        .print()
-    ,
-	newAudio("micTest2", "MicTest2.wav")
-    .settings.once()
-    .settings.log()
-    .print()
-    .wait()
-	,
-	newButton("play", "Play")
-    .print()
-    .wait()
-	,
-    newText("<p></p>")
-    ,
-    newText("<p>ท่านสามารถคลิกที่รูปภาพโดยตรง หรือกดปุ่ม <strong>F</strong> เพื่อเลือกรูปทางด้านซ้าย หรือกดปุ่ม <strong>J</strong> เพื่อเลือกรูปทางด้านขวาค่ะ</p>")
-    ,
-    newText("<p>โปรดกรอกอายุและเลือกเพศกำเนิดของท่าน แล้วกดปุ่มด้านล่างเพื่อเริ่มต้นการทดลองค่ะ</p>")
-    
-)
 
 PennController( "practiceA" ,
     newTimer(500)
