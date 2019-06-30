@@ -72,10 +72,6 @@ PennController( "welcome" ,
     .settings.after( getDropDown("micTestChoice") )
     .print()
     ,
-	newVar("mic")
-        .settings.global()
-		.set( getDropDown("micTestChoice") )
-	,
 	newAudio("micTest2", "MicTest2.wav")
     .settings.once()
     .settings.log()
@@ -89,10 +85,6 @@ PennController( "welcome" ,
     .settings.after( getDropDown("micTestChoice2") )
     .print()
     ,
-	newVar("mic2")
-        .settings.global()
-		.set( getDropDown("micTestChoice2") )
-	,
 	newText("<p>เมื่อกรอกและเลือกคำตอบทั้งหมดแล้ว กดปุ่มด้านล่างสองครั้งเพื่อเริ่มต้นการทดลองค่ะ</p>")
 	,
     newButton("start", "เริ่มต้นการทดลอง")
@@ -111,6 +103,14 @@ PennController( "welcome" ,
 	newVar("gender")
         .settings.global()
 		.set( getDropDown("GenderOptions") )
+	,
+	newVar("mic")
+        .settings.global()
+		.set( getDropDown("micTestChoice") )
+	,
+	newVar("mic2")
+        .settings.global()
+		.set( getDropDown("micTestChoice2") )
 )
 .log( "age" , getVar("age") )
 .log( "gender" , getVar("gender") )
@@ -263,10 +263,6 @@ PennController( "practiceA" ,
                 .wait()
         )
 	,
-	newVar("PracASelect")
-        .settings.global()
-		.set( getSelector("selectA") ) 
-	,
     clear()
 	,
     newCanvas(1250,500)
@@ -306,7 +302,7 @@ PennController( "practiceA" ,
   )
   .log( "age" , getVar("age") )
   .log( "gender" , getVar("gender") )
-  .log( "PracASelect", getVar("PracASelect") )
+  .log( "PracASelect", getSelector("selectA") )
 
 
 
@@ -445,7 +441,7 @@ PennController( "practiceB" ,
   )
   .log( "age" , getVar("age") )
   .log( "gender" , getVar("gender") )
-  .log( "PracBSelect", getVar("PracBSelect") )
+  .log( "PracBSelect", getSelector("selectB") )
 
 
 PennController( "practiceC" ,
@@ -550,10 +546,6 @@ PennController( "practiceC" ,
                 .wait()
         )
 	,
-	newVar("PracCSelect")
-        .settings.global()
-		.set( getSelector("selectC") ) 
-	,
     clear()
 	,
     newCanvas(1250,500)
@@ -583,7 +575,7 @@ PennController( "practiceC" ,
   )
   .log( "age" , getVar("age") )
   .log( "gender" , getVar("gender") )
-  .log( "PracCSelect", getVar("PracCSelect") )
+  .log( "PracCSelect", getSelector("selectC") )
   
 
 PennController( "practiceD" ,
@@ -687,10 +679,6 @@ PennController( "practiceD" ,
             newAudio("negative", "Incorrect.wav").play()   // Negative feedback if the test fails
                 .wait()
         )
-	,
-	newVar("PracDSelect")
-        .settings.global()
-		.set( getSelector("selectD") ) 
 	,
     clear()
 	,
@@ -797,11 +785,7 @@ PennController.Template(
         .wait()
   )
   .log( "age" , getVar("age") )
-  .log( "gender" , getVar("gender") )  
-  .log( "PracASelect", getVar("PracASelect") )
-  .log( "PracBSelect", getVar("PracBSelect") )
-  .log( "PracCSelect", getVar("PracCSelect") )
-  .log( "PracDSelect", getVar("PracDSelect") )
+  .log( "gender" , getVar("gender") )
   .log( "Item"   , variable.Item   )
   .log( "Group"  , variable.Group  )
   .log( "MainCond" , variable.MainCond )
@@ -811,6 +795,7 @@ PennController.Template(
 
 // Completion screen
 PennController.SendResults( "send" )
+
 PennController( "final" ,
     newText("<p>การทดลองสิ้นสุดลงแล้วค่ะ</p>")
 		.settings.center()
