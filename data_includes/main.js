@@ -693,7 +693,6 @@ PennController( "practiceD" ,
 	clear()
 	,
     newText("<b>เตรียมพร้อมนะคะ</b>")
-		.fontsize(7)
 		.settings.center()
 		.print()
     ,
