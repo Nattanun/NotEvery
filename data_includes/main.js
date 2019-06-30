@@ -76,7 +76,7 @@ PennController( "welcome" ,
         .settings.global()
 		.set( getDropDown("micTestChoice") )
 	,
-	newText(<p>"เมื่อกรอกและเลือกคำตอบทั้งหมดแล้ว กดปุ่มด้านล่างเพื่อเริ่มต้นการทดลองค่ะ"</p>)
+	newText("<p>เมื่อกรอกและเลือกคำตอบทั้งหมดแล้ว กดปุ่มด้านล่างเพื่อเริ่มต้นการทดลองค่ะ</p>")
 	,
     newButton("เริ่มต้นการทดลอง")
         .print()
