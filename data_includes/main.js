@@ -1,7 +1,20 @@
 PennController.ResetPrefix(null); // Initiates PennController
 
-PennController.Sequence( "welcome" , "practiceA" , "practiceB" , "practiceC" , "practiceD" , "experiment" , "send" , "final" ) //or you can randomize the experiment
+PennController.Sequence( "consent" , "welcome" , "practiceA" , "practiceB" , "practiceC" , "practiceD" , "experiment" , "send" , "final" ) //or you can randomize the experiment
 
+PennController( "consent",
+	newHtml("consent", "IbexConsentThai2019.html")
+    .print()
+	,
+	newButton("continue", "ไปยังหน้าถัดไป")
+    .print()
+    .wait(
+        getHtml("consent").test.complete()
+            .failure( getHtml("consent").warn() )
+    )
+	)
+	
+	
 PennController( "welcome" ,
     defaultText
         .print()
@@ -78,6 +91,10 @@ PennController( "practiceA" ,
     ,
 	clear()
 	,
+	newTimer(250)
+        .start()
+        .wait()
+    ,
     newAudio("audPracticeA", "A_02.wav")
         .play()
     ,
@@ -130,6 +147,10 @@ PennController( "practiceB" ,
     ,
 	clear()
 	,
+	newTimer(250)
+        .start()
+        .wait()
+    ,
     newAudio("audPracticeB", "B_02.wav")
         .play()
     ,
@@ -181,6 +202,10 @@ PennController( "practiceC" ,
     ,
 	clear()
 	,
+	newTimer(250)
+        .start()
+        .wait()
+    ,
     newAudio("audPracticeC", "C_02.wav")
         .play()
     ,
@@ -232,6 +257,10 @@ PennController( "practiceD" ,
     ,	
 	clear()
 	,
+	newTimer(250)
+        .start()
+        .wait()
+    ,
     newAudio("audPracticeD", "D_02.wav")
         .play()
     ,
@@ -284,6 +313,10 @@ PennController.Template(
     ,
 	clear()
 	,
+	newTimer(250)
+        .start()
+        .wait()
+    ,
     newAudio("description", variable.AudioFile)
         .play()
     ,
