@@ -387,7 +387,7 @@ PennController( "practiceB" ,
 	,
     newSelector("selectB")
 		.settings.once()
-        .settings.add( getImage("ImageVisPracticeB") , getImage("PCov") )
+        .settings.add( getImage("ImageVisPracticeB") , getImage("Pcov") )
         .settings.keys(          "F"    ,          "J"   )
         .settings.log()
         .wait()
@@ -653,7 +653,7 @@ PennController( "practiceD" ,
 	,
     newSelector("selectD")
 		.settings.once()
-        .settings.add( getImage("ImageVisPracticeD") , getImage("hiddenPracticeD") )
+        .settings.add( getImage("ImageVisPracticeD") , getImage("Pcov") )
         .settings.keys(          "F"    ,          "J"   )
         .settings.log()
         .wait()
