@@ -97,23 +97,22 @@ PennController( "welcome" ,
     .settings.after( getDropDown("micTestChoice2") )
     .print()
     ,
-	getDropDown("micTestChoice").test.selected("200")
-				.failure( newText("โปรดกดฟังเสียงและเลือกคำตอบที่ตรงกับเสียงค่ะ")
-				.print())
-	,
 	newVar("mic2")
         .settings.global()
 		.set( getDropDown("micTestChoice2") )
-	,
-	getDropDown("micTestChoice2").test.selected("56")
-					.failure( newText("โปรดกดฟังเสียงและเลือกคำตอบที่ตรงกับเสียงค่ะ")
-					.print())
 	,
 	newText("<p>เมื่อกรอกและเลือกคำตอบทั้งหมดแล้ว กดปุ่มด้านล่างเพื่อเริ่มต้นการทดลองค่ะ</p>")
 	,
     newButton("เริ่มต้นการทดลอง")
         .print()
-		.wait()
+		.wait(getDropDown("micTestChoice").test.selected("200")
+				.failure( newText("โปรดกดฟังเสียงและเลือกคำตอบที่ตรงกับเสียงค่ะ")
+				.print()))
+		.wait(getDropDown("micTestChoice2").test.selected("56")
+					.failure( newText("โปรดกดฟังเสียงและเลือกคำตอบที่ตรงกับเสียงค่ะ")
+					.print())
+	,
+		)
 )
 .log( "age" , getVar("age") )
 .log( "gender" , getVar("gender") )
