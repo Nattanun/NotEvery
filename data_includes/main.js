@@ -306,7 +306,7 @@ PennController( "practiceA" ,
   )
   .log( "age" , getVar("age") )
   .log( "gender" , getVar("gender") )
-  .log( "PracASelect", getVar("PracASelect")
+  .log( "PracASelect", getVar("PracASelect") )
 
 
 
@@ -445,7 +445,7 @@ PennController( "practiceB" ,
   )
   .log( "age" , getVar("age") )
   .log( "gender" , getVar("gender") )
-  .log( "PracBSelect", getVar("PracBSelect")
+  .log( "PracBSelect", getVar("PracBSelect") )
 
 
 PennController( "practiceC" ,
@@ -583,7 +583,7 @@ PennController( "practiceC" ,
   )
   .log( "age" , getVar("age") )
   .log( "gender" , getVar("gender") )
-  .log( "PracCSelect", getVar("PracCSelect")
+  .log( "PracCSelect", getVar("PracCSelect") )
   
 
 PennController( "practiceD" ,
@@ -741,7 +741,7 @@ PennController( "practiceD" ,
   )
   .log( "age" , getVar("age") )
   .log( "gender" , getVar("gender") )
-  .log( "PracDSelect", getVar("PracDSelect")
+  .log( "PracDSelect", getVar("PracDSelect") )
 
 
 PennController.Template( 
@@ -798,10 +798,10 @@ PennController.Template(
   )
   .log( "age" , getVar("age") )
   .log( "gender" , getVar("gender") )  
-  .log( "PracASelect", getVar("PracASelect")
-  .log( "PracBSelect", getVar("PracBSelect")
-  .log( "PracCSelect", getVar("PracCSelect")
-  .log( "PracDSelect", getVar("PracDSelect")
+  .log( "PracASelect", getVar("PracASelect") )
+  .log( "PracBSelect", getVar("PracBSelect") )
+  .log( "PracCSelect", getVar("PracCSelect") )
+  .log( "PracDSelect", getVar("PracDSelect") )
   .log( "Item"   , variable.Item   )
   .log( "Group"  , variable.Group  )
   .log( "MainCond" , variable.MainCond )
