@@ -26,7 +26,7 @@ PennController( "welcome" ,
     ,	
     //newText("<p>ท่านสามารถคลิกที่รูปภาพโดยตรง หรือกดปุ่ม <strong>F</strong> เพื่อเลือกรูปทางด้านซ้าย หรือกดปุ่ม <strong>J</strong> เพื่อเลือกรูปทางด้านขวาค่ะ</p>")
     //,
-    newText("<p>โปรดกรอกอายุและเลือกเพศกำเนิดของท่านค่ะ และกดปุ่มยืนยันคำตอบสองครั้งค่ะ</p>")
+    newText("<p>โปรดกรอกอายุและเลือกเพศกำเนิดของท่าน และกดปุ่มยืนยันคำตอบ<i>สองครั้ง</i>ค่ะ</p>")
     ,
     newTextInput("age")
 		.settings.length(2)
@@ -122,6 +122,7 @@ PennController( "welcome" ,
 
 PennController( "practiceA" ,
     newButton("start", "เริ่มฟังเสียง")
+		.print()
 		.wait()
 		.remove()
     ,
