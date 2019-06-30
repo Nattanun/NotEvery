@@ -133,17 +133,29 @@ PennController( "practiceA" ,
     getAudio("instruc1")
        .wait("first")
     ,
+	newTimer(500)
+        .start()
+        .wait()
+    ,
 	newAudio("instruc2", "Instruc02.wav")
         .play()
 	,
     getAudio("instruc2")
        .wait("first")
     ,
+	newTimer(2000)
+        .start()
+        .wait()
+    ,
 	newAudio("instruc3", "TryPracticing.wav")
         .play()
 	,
     getAudio("instruc3")
        .wait("first")
+    ,
+	newTimer(3000)
+        .start()
+        .wait()
     ,
     newAudio("audPracticeA1", "A_01.wav")
         .play()
@@ -186,19 +198,39 @@ PennController( "practiceA" ,
         .settings.add( 650 , 100 , getImage("Pcov") )
         .print()
     ,
-    newSelector()
-        .settings.add( getImage("ImageVisPracticeA") , getImage("Pcov") )
-        .settings.keys(          "F"    ,          "J"   )
-        .settings.log()
-        .wait()
-    ,
     getAudio("audPracticeA")
        .wait("first")
+    ,
+	newTimer(500)
+        .start()
+        .wait()
+    ,
+	newAudio("clickorpress", "ClickorPress.wav")
+        .play()
+    ,
+	newTimer(1000)
+        .start()
+        .wait()
     ,
     newAudio("left", "Left.wav")
         .play()
     ,
     getImage("larrow").settings.visible()
+    ,
+	newTimer(1000)
+        .start()
+        .wait()
+    ,
+    newAudio("orright", "orRight.wav")
+        .play()
+    ,
+    getImage("rarrow").settings.visible()
+    ,
+    newSelector()
+        .settings.add( getImage("ImageVisPracticeA") , getImage("Pcov") )
+        .settings.keys(          "F"    ,          "J"   )
+        .settings.log()
+        .wait()
     ,
     newTimer(500)
         .start()
