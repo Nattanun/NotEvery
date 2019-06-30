@@ -24,9 +24,9 @@ PennController( "welcome" ,
     ,
     newText("<p>ในการทดลองนี้ ท่านจะต้องเลือกว่ารูปภาพรูปไหนในสองรูปตรงกับเสียงบรรยายนะคะ</p>")
     ,	
-    newText("<p>ท่านสามารถคลิกที่รูปภาพโดยตรง หรือกดปุ่ม <strong>F</strong> เพื่อเลือกรูปทางด้านซ้าย หรือกดปุ่ม <strong>J</strong> เพื่อเลือกรูปทางด้านขวาค่ะ</p>")
-    ,
-    newText("<p>โปรดกรอกอายุและเลือกเพศกำเนิดของท่านค่ะ</p>")
+    //newText("<p>ท่านสามารถคลิกที่รูปภาพโดยตรง หรือกดปุ่ม <strong>F</strong> เพื่อเลือกรูปทางด้านซ้าย หรือกดปุ่ม <strong>J</strong> เพื่อเลือกรูปทางด้านขวาค่ะ</p>")
+    //,
+    newText("<p>โปรดกรอกอายุและเลือกเพศกำเนิดของท่านค่ะ และกดปุ่มยืนยันคำตอบสองครั้งค่ะ</p>")
     ,
     newTextInput("age")
 		.settings.length(2)
@@ -65,10 +65,6 @@ PennController( "welcome" ,
 					.print())
 			)
 	,
-    newText("(กดสองครั้ง)")
-		.settings.before(getButton("validate"))
-		.print()
-    ,
 	newText("<p><b>กรุณาใส่หูฟังและกดปุ่มเล่นเสียง เพื่อทดสอบว่าท่านได้ยินเสียงหรือไม่นะคะ</b></p>")
     ,
 	newAudio("micTest1", "MicTest1.wav")
@@ -105,7 +101,7 @@ PennController( "welcome" ,
         .settings.global()
 		.set( getDropDown("micTestChoice2") )
 	,
-	newText("<p>เมื่อกรอกและเลือกคำตอบทั้งหมดแล้ว กดปุ่มด้านล่างเพื่อเริ่มต้นการทดลองค่ะ</p>")
+	newText("<p>เมื่อกรอกและเลือกคำตอบทั้งหมดแล้ว กดปุ่มด้านล่างสองครั้งเพื่อเริ่มต้นการทดลองค่ะ</p>")
 	,
     newButton("start", "เริ่มต้นการทดลอง")
         .print()
@@ -115,11 +111,6 @@ PennController( "welcome" ,
 		.wait(getDropDown("micTestChoice2").test.selected("56")
 					.failure( newText("โปรดกดฟังเสียงและเลือกคำตอบที่ตรงกับเสียงค่ะ")
 					.print()))
-	,
-    newText("(กดสองครั้ง)")
-		.settings.before(getButton("start"))
-		.print()
-    ,
 )
 .log( "age" , getVar("age") )
 .log( "gender" , getVar("gender") )
@@ -140,7 +131,7 @@ PennController( "practiceA" ,
     getAudio("instruc1")
        .wait("first")
     ,
-	newTimer(500)
+	newTimer(250)
         .start()
         .wait()
     ,
@@ -216,7 +207,7 @@ PennController( "practiceA" ,
         .play()
     ,
     getAudio("clickorpress")
-       .wait("first")
+       .wait()
     ,
 	newTimer(1000)
         .start()
@@ -228,7 +219,7 @@ PennController( "practiceA" ,
     getImage("larrow").settings.visible()
     ,
     getAudio("larrow")
-       .wait("first")
+       .wait()
     ,
     getImage("larrow").settings.hidden()
     ,
@@ -242,7 +233,7 @@ PennController( "practiceA" ,
     getImage("rarrow").settings.visible().remove()
     ,
     getAudio("rarrow")
-       .wait("first")
+       .wait()
     ,
     getImage("rarrow").settings.hidden()
     ,
