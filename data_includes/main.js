@@ -1,5 +1,5 @@
 PennController.ResetPrefix(null); // Initiates PennController
-PennController.DebugOff()
+//PennController.DebugOff()
 PennController.Sequence( "consent" , "welcome" , "practiceA" , "practiceB" , "practiceC" , "practiceD" , "experiment" , "send" , "final" ) //or you can randomize the experiment
 
 PennController( "consent",
@@ -302,7 +302,6 @@ PennController( "practiceA" ,
   )
   .log( "age" , getVar("age") )
   .log( "gender" , getVar("gender") )
-  .log( "PracASelect", getSelector("selectA") )
 
 
 
@@ -408,10 +407,6 @@ PennController( "practiceB" ,
                 .wait()
         )
 	,
-	newVar("PracBSelect")
-        .settings.global()
-		.set( getSelector("selectB") ) 
-	,
     clear()
 	,
     newCanvas(1250,500)
@@ -441,7 +436,6 @@ PennController( "practiceB" ,
   )
   .log( "age" , getVar("age") )
   .log( "gender" , getVar("gender") )
-  .log( "PracBSelect", getSelector("selectB") )
 
 
 PennController( "practiceC" ,
@@ -575,7 +569,6 @@ PennController( "practiceC" ,
   )
   .log( "age" , getVar("age") )
   .log( "gender" , getVar("gender") )
-  .log( "PracCSelect", getSelector("selectC") )
   
 
 PennController( "practiceD" ,
@@ -729,7 +722,6 @@ PennController( "practiceD" ,
   )
   .log( "age" , getVar("age") )
   .log( "gender" , getVar("gender") )
-  .log( "PracDSelect", getVar("PracDSelect") )
 
 
 PennController.Template( 
