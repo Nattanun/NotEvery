@@ -36,10 +36,6 @@ PennController( "welcome" ,
 		.settings.after( getTextInput("age") )
 		.print()
 	,
-    newVar("age")
-        .settings.global()
-        .set( getTextInput("age") )
-    ,
     newDropDown("GenderOptions", "")
     .settings.add("หญิง", "ชาย")
     .print()
@@ -48,10 +44,6 @@ PennController( "welcome" ,
     .settings.after( getDropDown("GenderOptions") )
     .print()
     ,
-	newVar("gender")
-        .settings.global()
-		.set( getDropDown("GenderOptions") )
-	,
 	newButton("validate", "ยืนยันคำตอบ")
         .print()
 		.wait(
@@ -111,6 +103,14 @@ PennController( "welcome" ,
 		.wait(getDropDown("micTestChoice2").test.selected("56")
 					.failure( newText("โปรดกดฟังเสียงและเลือกคำตอบที่ตรงกับเสียงค่ะ")
 					.print()))
+	,
+    newVar("age")
+        .settings.global()
+        .set( getTextInput("age") )
+    ,
+	newVar("gender")
+        .settings.global()
+		.set( getDropDown("GenderOptions") )
 )
 .log( "age" , getVar("age") )
 .log( "gender" , getVar("gender") )
@@ -263,6 +263,10 @@ PennController( "practiceA" ,
                 .wait()
         )
 	,
+	newVar("PracASelect")
+        .settings.global()
+		.set( getSelector("selectA") ) 
+	,
     clear()
 	,
     newCanvas(1250,500)
@@ -302,6 +306,7 @@ PennController( "practiceA" ,
   )
   .log( "age" , getVar("age") )
   .log( "gender" , getVar("gender") )
+  .log( "PracASelect", getVar("PracASelect")
 
 
 
@@ -407,6 +412,10 @@ PennController( "practiceB" ,
                 .wait()
         )
 	,
+	newVar("PracBSelect")
+        .settings.global()
+		.set( getSelector("selectB") ) 
+	,
     clear()
 	,
     newCanvas(1250,500)
@@ -436,6 +445,7 @@ PennController( "practiceB" ,
   )
   .log( "age" , getVar("age") )
   .log( "gender" , getVar("gender") )
+  .log( "PracBSelect", getVar("PracBSelect")
 
 
 PennController( "practiceC" ,
@@ -540,6 +550,10 @@ PennController( "practiceC" ,
                 .wait()
         )
 	,
+	newVar("PracCSelect")
+        .settings.global()
+		.set( getSelector("selectC") ) 
+	,
     clear()
 	,
     newCanvas(1250,500)
@@ -569,6 +583,7 @@ PennController( "practiceC" ,
   )
   .log( "age" , getVar("age") )
   .log( "gender" , getVar("gender") )
+  .log( "PracCSelect", getVar("PracCSelect")
   
 
 PennController( "practiceD" ,
@@ -673,6 +688,10 @@ PennController( "practiceD" ,
                 .wait()
         )
 	,
+	newVar("PracDSelect")
+        .settings.global()
+		.set( getSelector("selectD") ) 
+	,
     clear()
 	,
     newCanvas(1250,500)
@@ -722,6 +741,7 @@ PennController( "practiceD" ,
   )
   .log( "age" , getVar("age") )
   .log( "gender" , getVar("gender") )
+  .log( "PracDSelect", getVar("PracDSelect")
 
 
 PennController.Template( 
@@ -777,7 +797,11 @@ PennController.Template(
         .wait()
   )
   .log( "age" , getVar("age") )
-  .log( "gender" , getVar("gender") )
+  .log( "gender" , getVar("gender") )  
+  .log( "PracASelect", getVar("PracASelect")
+  .log( "PracBSelect", getVar("PracBSelect")
+  .log( "PracCSelect", getVar("PracCSelect")
+  .log( "PracDSelect", getVar("PracDSelect")
   .log( "Item"   , variable.Item   )
   .log( "Group"  , variable.Group  )
   .log( "MainCond" , variable.MainCond )
