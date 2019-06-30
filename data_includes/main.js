@@ -694,7 +694,7 @@ PennController( "practiceD" ,
 	,
     newText("<b>เตรียมพร้อมนะคะ</b>")
 		.settings.center()
-		.fontsize(50)
+		.fontsize(7)
 		.print()
     ,
 	newTimer(3000)
@@ -769,7 +769,8 @@ PennController.Template(
 // Completion screen
 PennController.SendResults( "send" )
 PennController( "final" ,
-    newText("<p>ขอบพระคุณท่านเป็นอย่างสูงที่ให้ความร่วมมือเข้าร่วมการทดลองค่ะ</p>")
+    newText("<p>กราบขอบพระคุณท่านเป็นอย่างสูงที่ให้ความร่วมมือในการทดลองค่ะ</p>")
+		.settings.center()
         .print()
     ,
     newButton("void")
