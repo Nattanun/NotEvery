@@ -24,8 +24,6 @@ PennController( "welcome" ,
     ,
     newText("<p>ในการทดลองนี้ ท่านจะต้องเลือกว่ารูปภาพรูปไหนในสองรูปตรงกับเสียงบรรยายนะคะ</p>")
     ,
-    newText("<p>ท่านสามารถคลิกที่รูปภาพโดยตรง หรือกดปุ่ม <strong>F</strong> เพื่อเลือกรูปทางด้านซ้าย หรือกดปุ่ม <strong>J</strong> เพื่อเลือกรูปทางด้านขวาค่ะ</p>")
-    ,
     newText("<p>โปรดกรอกอายุและเลือกเพศกำเนิดของท่าน แล้วกดปุ่มด้านล่างเพื่อเริ่มต้นการทดลองค่ะ</p>")
     ,
     newTextInput("age")
@@ -68,6 +66,10 @@ PennController( "welcome" ,
 .log( "age" , getVar("age") )
 .log( "gender" , getVar("gender") )
 
+
+// Start typing your code here
+
+
 PennController( "mictest" ,
 	defaultText
         .print()
@@ -104,8 +106,6 @@ PennController( "mictest" ,
     newText("<p>โปรดกรอกอายุและเลือกเพศกำเนิดของท่าน แล้วกดปุ่มด้านล่างเพื่อเริ่มต้นการทดลองค่ะ</p>")
     
 )
-
-// Start typing your code here
 
 PennController( "practiceA" ,
     newTimer(500)
