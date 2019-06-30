@@ -708,7 +708,7 @@ PennController( "practiceD" ,
 	,
 	clear()
 	,
-    newText("<p> </p> <p> </p> <p> </p> <p> <b>เตรียมพร้อมนะคะ</b> </p>")
+    newText("<p> </p> <p> </p> <p> </p> <p> </p> <p> </p> <p> </p> <p> </p> <p> </p> <p> </p> <p> </p> <p> </p> <p> </p> <p> </p> <p> </p> <p> <b>เตรียมพร้อมนะคะ</b> </p>")
 		.settings.center()
 		.print()
     ,
@@ -752,11 +752,11 @@ PennController.Template(
         .settings.size(600, Math.round(variable.ImageFile.height*(600/variable.ImageFile.width)))
     ,
     newImage("cov", "Covered_Box.jpg")
-        .settings.size(600,400)
+        .settings.size(600,500)
     ,
     newCanvas(1250,500)
-        .settings.add( 0 , 100+"middle at 50%" , getImage("visible") )
-        .settings.add( 650 , 100 , getImage("cov") )
+        .settings.add( 0 , "middle at 50%" , getImage("visible") )
+        .settings.add( 650 , 0 , getImage("cov") )
         .print()
     ,
     newSelector()
@@ -791,4 +791,7 @@ PennController( "final" ,
     newText("<p><b>กราบขอบพระคุณท่านเป็นอย่างสูงที่ให้ความร่วมมือในการทดลองนะคะ</b></p>")
 		.settings.center()
         .print()
+	,
+    newButton("void")
+        .wait()
 )
