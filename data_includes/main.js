@@ -52,7 +52,7 @@ PennController( "welcome" ,
         .settings.global()
 		.set( getDropDown("GenderOptions") )
 	,
-	newText("<p>กรุณาใส่หูฟังและทดสอบว่าท่านได้ยินเสียงหรือไม่นะคะ</p>")
+	newText("<p><b>กรุณาใส่หูฟังและทดสอบว่าท่านได้ยินเสียงหรือไม่นะคะ</b></p>")
     ,
 	newAudio("micTest1", "MicTest1.wav")
     .settings.once()
@@ -60,21 +60,35 @@ PennController( "welcome" ,
     .print()
     .wait()
 	,
-	newButton("play", "Play")
-    .print()
-    .wait()
-	,
     newDropDown("micTestChoice", "")
     .settings.add("35", "87", "150", "200", "340")
     .print()
 	,
-    newText("เสียงที่ท่านได้ยินตรงกับเลขใดต่อไปนี้")
+    newText("(1) เสียงที่ท่านได้ยินข้างต้นตรงกับเลขใดต่อไปนี้")
     .settings.after( getDropDown("micTestChoice") )
     .print()
     ,
 	newVar("mic")
         .settings.global()
 		.set( getDropDown("micTestChoice") )
+	,
+	newAudio("micTest2", "MicTest2.wav")
+    .settings.once()
+    .settings.log()
+    .print()
+    .wait()
+	,
+    newDropDown("micTestChoice2", "")
+    .settings.add("23", "56", "160", "367", "450")
+    .print()
+	,
+    newText("(2) เสียงที่ท่านได้ยินข้างต้นตรงกับเลขใดต่อไปนี้")
+    .settings.after( getDropDown("micTestChoice2") )
+    .print()
+    ,
+	newVar("mic2")
+        .settings.global()
+		.set( getDropDown("micTestChoice2") )
 	,
 	newText("<p>เมื่อกรอกและเลือกคำตอบทั้งหมดแล้ว กดปุ่มด้านล่างเพื่อเริ่มต้นการทดลองค่ะ</p>")
 	,
@@ -95,10 +109,16 @@ PennController( "welcome" ,
 					.failure( newText("โปรดกดฟังเสียงและเลือกคำตอบที่ตรงกับเสียงค่ะ")
 					.print())
 			)
+		.wait(
+		getDropDown("micTestChoice").test.selected("56")
+					.failure( newText("โปรดกดฟังเสียงและเลือกคำตอบที่ตรงกับเสียงค่ะ")
+					.print())
+			)
 )
 .log( "age" , getVar("age") )
 .log( "gender" , getVar("gender") )
 .log( "mic" , getVar("mic") )
+.log( "mic2" , getVar("mic2") )
 
 
 // Start typing your code here
