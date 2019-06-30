@@ -196,9 +196,9 @@ PennController( "practiceA" ,
     newCanvas(1250,500)
         .settings.add( 550 , 0 , getImage("larrow").settings.hidden() )
         .settings.add( 650 , 0 , getImage("rarrow").settings.hidden() )
-        .settings.add(   0 , 100 , getImage("ImageVisPracticeA") )		
-		.settings.add( 650 , 100 , getImage("hiddenPracticeA").settings.hidden() )
+        .settings.add(   0 , 100 , getImage("ImageVisPracticeA") )
         .settings.add( 650 , 100 , getImage("Pcov") )
+		.settings.add( 650 , 100 , getImage("hiddenPracticeA").settings.hidden() )
         .print()
     ,
     getAudio("audPracticeA")
@@ -244,7 +244,7 @@ PennController( "practiceA" ,
 	,
     newSelector("selectA")
 		.settings.once()
-        .settings.add( getImage("ImageVisPracticeA") , getImage("Pcov") )
+        .settings.add( getImage("ImageVisPracticeA") , getImage("hiddenPracticeA") )
         .settings.keys(          "F"    ,          "J"   )
         .settings.log()
         .wait()
@@ -254,7 +254,7 @@ PennController( "practiceA" ,
         .wait()
     ,
     getSelector("selectA")           // Test whether the target image was selected
-        .test.selected( getImage("Pcov") )
+        .test.selected( getImage("hiddenPracticeA") )
         .success(
             newAudio("positive", "Correct.wav").play()   // Positive feedback if the test succeeds
                 .wait()
@@ -347,8 +347,8 @@ PennController( "practiceB" ,
         .settings.add( 550 , 0 , getImage("larrow").settings.hidden() )
         .settings.add( 650 , 0 , getImage("rarrow").settings.hidden() )
         .settings.add(   0 , 100 , getImage("ImageVisPracticeB") )
-		.settings.add( 650 , 100 , getImage("hiddenPracticeB").settings.hidden() )
         .settings.add( 650 , 100 , getImage("Pcov") )
+		.settings.add( 650 , 100 , getImage("hiddenPracticeB").settings.hidden() )
         .print()
     ,
     getAudio("audPracticeB")
@@ -384,7 +384,7 @@ PennController( "practiceB" ,
 	,
     newSelector("selectB")
 		.settings.once()
-        .settings.add( getImage("ImageVisPracticeB") , getImage("Pcov") )
+        .settings.add( getImage("ImageVisPracticeB") , getImage("hiddenPracticeB") )
         .settings.keys(          "F"    ,          "J"   )
         .settings.log()
         .wait()
@@ -475,9 +475,9 @@ PennController( "practiceC" ,
     newCanvas(1250,500)
         .settings.add( 550 , 0 , getImage("larrow").settings.hidden() )
         .settings.add( 650 , 0 , getImage("rarrow").settings.hidden() )
-        .settings.add(   0 , 100 , getImage("ImageVisPracticeC") )		
-		.settings.add( 650 , 100 , getImage("hiddenPracticeC").settings.hidden() )
+        .settings.add(   0 , 100 , getImage("ImageVisPracticeC") )
         .settings.add( 650 , 100 , getImage("Pcov") )
+		.settings.add( 650 , 100 , getImage("hiddenPracticeC").settings.hidden() )
         .print()
     ,
     getAudio("audPracticeC")
@@ -513,7 +513,7 @@ PennController( "practiceC" ,
 	,
     newSelector("selectC")
 		.settings.once()
-        .settings.add( getImage("ImageVisPracticeC") , getImage("Pcov") )
+        .settings.add( getImage("ImageVisPracticeC") , getImage("hiddenPracticeC") )
         .settings.keys(          "F"    ,          "J"   )
         .settings.log()
         .wait()
@@ -523,7 +523,7 @@ PennController( "practiceC" ,
         .wait()
     ,
     getSelector("selectC")           // Test whether the target image was selected
-        .test.selected( getImage("Pcov") )
+        .test.selected( getImage("hiddenPracticeC") )
         .success(
             newAudio("positive", "Correct.wav").play()   // Positive feedback if the test succeeds
                 .wait()
@@ -604,9 +604,9 @@ PennController( "practiceD" ,
     newCanvas(1250,500)
         .settings.add( 550 , 0 , getImage("larrow").settings.hidden() )
         .settings.add( 650 , 0 , getImage("rarrow").settings.hidden() )
-        .settings.add(   0 , 100 , getImage("ImageVisPracticeD") )		
-		.settings.add( 650 , 100 , getImage("hiddenPracticeD").settings.hidden() )
+        .settings.add(   0 , 100 , getImage("ImageVisPracticeD") )
         .settings.add( 650 , 100 , getImage("Pcov") )
+		.settings.add( 650 , 100 , getImage("hiddenPracticeD").settings.hidden() )
         .print()
     ,
     getAudio("audPracticeD")
@@ -642,7 +642,7 @@ PennController( "practiceD" ,
 	,
     newSelector("selectD")
 		.settings.once()
-        .settings.add( getImage("ImageVisPracticeD") , getImage("Pcov") )
+        .settings.add( getImage("ImageVisPracticeD") , getImage("hiddenPracticeD") )
         .settings.keys(          "F"    ,          "J"   )
         .settings.log()
         .wait()
@@ -690,6 +690,16 @@ PennController( "practiceD" ,
     getAudio("critical")
        .wait("first")
 	,
+	clear()
+	,
+    newText("<b>เตรียมพร้อมนะคะ</b>")
+		.settings.center()
+		.fontsize(50)
+		.print()
+    ,
+	newTimer(3000)
+        .start()
+        .wait()
   )
   .log( "age" , getVar("age") )
   .log( "gender" , getVar("gender") )
@@ -759,10 +769,7 @@ PennController.Template(
 // Completion screen
 PennController.SendResults( "send" )
 PennController( "final" ,
-    newText("<p>Thank you for your participation!</p>")
-        .print()
-    ,
-    newText("<p><a href='https://www.put.your/platform/confirmation/link.here'>Click here to validate your participation.</a></p>")
+    newText("<p>ขอบพระคุณท่านเป็นอย่างสูงที่ให้ความร่วมมือเข้าร่วมการทดลองค่ะ</p>")
         .print()
     ,
     newButton("void")
