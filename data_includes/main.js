@@ -1,5 +1,5 @@
 PennController.ResetPrefix(null); // Initiates PennController
-
+PennController.DebugOff()
 PennController.Sequence( "consent" , "welcome" , "practiceA" , "practiceB" , "practiceC" , "practiceD" , "experiment" , "send" , "final" ) //or you can randomize the experiment
 
 PennController( "consent",
@@ -152,7 +152,7 @@ PennController( "practiceA" ,
     getAudio("instruc3")
        .wait("first")
     ,
-	newTimer(3000)
+	newTimer(2000)
         .start()
         .wait()
     ,
@@ -708,7 +708,7 @@ PennController( "practiceD" ,
 	,
 	clear()
 	,
-    newText("<b>เตรียมพร้อมนะคะ</b>")
+    newText("<p> </p> <p> </p> <p> </p> <p> <b>เตรียมพร้อมนะคะ</b> </p>")
 		.settings.center()
 		.print()
     ,
@@ -784,10 +784,11 @@ PennController.Template(
 // Completion screen
 PennController.SendResults( "send" )
 PennController( "final" ,
-    newText("<p>กราบขอบพระคุณท่านเป็นอย่างสูงที่ให้ความร่วมมือในการทดลองค่ะ</p>")
+    newText("<p>การทดลองสิ้นสุดลงแล้วค่ะ</p>")
 		.settings.center()
         .print()
-    ,
-    newButton("void")
-        .wait()
+	,
+    newText("<p><b>กราบขอบพระคุณท่านเป็นอย่างสูงที่ให้ความร่วมมือในการทดลองนะคะ</b></p>")
+		.settings.center()
+        .print()
 )
