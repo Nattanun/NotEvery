@@ -213,23 +213,29 @@ PennController( "practiceA" ,
         .start()
         .wait()
     ,
+    getImage("larrow").settings.visible()
+	,
     newAudio("left", "Left.wav")
         .play()
     ,
-    getImage("larrow").settings.visible()
-		.wait(getAudio("left").test.hasPlayed())
-		.remove()
+	getAudio("left")
+		.wait("first")
+	,
+    getImage("larrow").settings.hidden()
 	,
 	newTimer(1000)
         .start()
         .wait()
     ,
+    getImage("rarrow").settings.visible()
+	,
     newAudio("orright", "orRight.wav")
         .play()
     ,
-    getImage("rarrow").settings.visible()
-		.wait(getAudio("left").test.hasPlayed())
-		.remove()
+	getAudio("orright")
+		.wait("first")
+	,
+    getImage("rarrow").settings.hidden()
 	,
     newSelector()
         .settings.add( getImage("ImageVisPracticeA") , getImage("Pcov") )
