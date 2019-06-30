@@ -102,15 +102,15 @@ PennController( "welcome" ,
     ,
 	newVar("gender")
         .settings.global()
-		.set( getDropDown("GenderOptions") )
+		.set( getDropDown("GenderOptions").settings.log() )
 	,
 	newVar("mic")
         .settings.global()
-		.set( getDropDown("micTestChoice") )
+		.set( getDropDown("micTestChoice").settings.log() )
 	,
 	newVar("mic2")
         .settings.global()
-		.set( getDropDown("micTestChoice2") )
+		.set( getDropDown("micTestChoice2").settings.log() )
 )
 .log( "age" , getVar("age") )
 .log( "gender" , getVar("gender") )
