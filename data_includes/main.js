@@ -7,6 +7,7 @@ PennController( "consent",
     .print()
 	,
 	newButton("continue", "ไปยังหน้าถัดไป")
+	.settings.right()
     .print()
     .wait(
         getHtml("consent").test.complete()
