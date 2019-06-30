@@ -708,7 +708,11 @@ PennController( "practiceD" ,
 	,
 	clear()
 	,
-    newText("<p> </p> <p> </p> <p> </p> <p> </p> <p> </p> <p> </p> <p> </p> <p> </p> <p> </p> <p> </p> <p> </p> <p> </p> <p> </p> <p> </p> <p> <b>เตรียมพร้อมนะคะ</b> </p>")
+    newText("<p> </p>")
+		.settings.center()
+		.print()
+    ,
+    newText("<p> <b>เตรียมพร้อมนะคะ</b> </p>")
 		.settings.center()
 		.print()
     ,
