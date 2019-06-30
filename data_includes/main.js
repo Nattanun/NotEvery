@@ -121,9 +121,9 @@ PennController( "welcome" ,
 // Start typing your code here
 
 PennController( "practiceA" ,
-    newTimer(500)
-        .start()
-        .wait()
+    newButton("start", "เริ่มฟังเสียง")
+		.wait()
+		.remove()
     ,
 	newAudio("instruc1", "Instruc01.wav")
         .play()
@@ -244,19 +244,15 @@ PennController( "practiceA" ,
         .settings.log()
         .wait()
     ,
-	newAudio("positive", "Correct.wav")
-    ,
-	newAudio("negative", "Incorrect.wav")
-    ,
     getSelector("selectA")           // Test whether the target image was selected
         .test.selected( getImage("Pcov") )
         .success(
-            getAudio("positive")   // Positive feedback if the test succeeds
-                .wait("first")
+            newAudio("positive", "Correct.wav").play()   // Positive feedback if the test succeeds
+                .wait()
         )
         .failure(
-            getAudio("negative")   // Negative feedback if the test fails
-                .wait("first")
+            newAudio("negative", "Incorrect.wav").play()   // Negative feedback if the test fails
+                .wait()
         )
 	,
     newAudio("correctRight", "CorrectRight.wav")
