@@ -693,8 +693,8 @@ PennController( "practiceD" ,
 	clear()
 	,
     newText("<b>เตรียมพร้อมนะคะ</b>")
-		.settings.center()
 		.fontsize(7)
+		.settings.center()
 		.print()
     ,
 	newTimer(3000)
