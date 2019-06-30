@@ -463,21 +463,95 @@ PennController( "practiceC" ,
     newImage("Pcov", "Covered_Box.jpg")
         .settings.size(600,400)
     ,
-    newCanvas(1250,400)
-        .settings.add(   0 , 0 , getImage("ImageVisPracticeC") )
-        .settings.add( 650 , 0 , getImage("Pcov") )
+	newImage("hiddenPracticeC", "C_3.jpg")
+        .settings.size(600,400)
+    ,
+    newImage("larrow", "Left_Arrow.jpg")
+        .settings.size(100,100)
+    ,
+    newImage("rarrow", "Right_Arrow.jpg")
+        .settings.size(100,100)
+    ,
+    newCanvas(1250,500)
+        .settings.add( 550 , 0 , getImage("larrow").settings.hidden() )
+        .settings.add( 650 , 0 , getImage("rarrow").settings.hidden() )
+        .settings.add(   0 , 100 , getImage("ImageVisPracticeC") )
+        .settings.add( 650 , 100 , getImage("Pcov") )
+		.settings.add( 650 , 100 , getImage("hiddenPracticeC").settings.hidden() )
         .print()
     ,
-    newSelector()
+    getAudio("audPracticeC")
+       .wait("first")
+    ,
+	newTimer(500)
+        .start()
+        .wait()
+    ,
+    getImage("larrow").settings.visible()
+	,
+    newAudio("left", "Left.wav")
+        .play()
+    ,
+	getAudio("left")
+		.wait("first")
+	,
+    getImage("larrow").settings.hidden()
+	,
+	newTimer(1000)
+        .start()
+        .wait()
+    ,
+    getImage("rarrow").settings.visible()
+	,
+    newAudio("orright", "orRight.wav")
+        .play()
+    ,
+	getAudio("orright")
+		.wait("first")
+	,
+    getImage("rarrow").settings.hidden()
+	,
+    newSelector("selectC")
+		.settings.once()
         .settings.add( getImage("ImageVisPracticeC") , getImage("Pcov") )
         .settings.keys(          "F"    ,          "J"   )
         .settings.log()
         .wait()
     ,
-    getAudio("audPracticeC")
-       .wait("first")
+	newTimer(250)
+        .start()
+        .wait()
     ,
-    newTimer(500)
+    getSelector("selectC")           // Test whether the target image was selected
+        .test.selected( getImage("Pcov") )
+        .success(
+            newAudio("positive", "Correct.wav").play()   // Positive feedback if the test succeeds
+                .wait()
+        )
+        .failure(
+            newAudio("negative", "Incorrect.wav").play()   // Negative feedback if the test fails
+                .wait()
+        )
+	,
+    getImage("hiddenPracticeC").settings.visible()
+	,
+	newTimer(250)
+        .start()
+        .wait()
+    ,
+    newAudio("correctRight", "CorrectRight.wav")
+        .play()
+    ,
+	getAudio("correctRight")
+		.wait("first")
+	,
+	newAudio("repeatC", "C_02.wav")
+        .play()
+    ,
+	getAudio("repeatC")
+		.wait("first")
+	,
+	newTimer(500)
         .start()
         .wait()
   )
@@ -518,23 +592,104 @@ PennController( "practiceD" ,
     newImage("Pcov", "Covered_Box.jpg")
         .settings.size(600,400)
     ,
-    newCanvas(1250,400)
-        .settings.add(   0 , 0 , getImage("ImageVisPracticeD") )
-        .settings.add( 650 , 0 , getImage("Pcov") )
+	newImage("hiddenPracticeD", "D_3.jpg")
+        .settings.size(600,400)
+    ,
+    newImage("larrow", "Left_Arrow.jpg")
+        .settings.size(100,100)
+    ,
+    newImage("rarrow", "Right_Arrow.jpg")
+        .settings.size(100,100)
+    ,
+    newCanvas(1250,500)
+        .settings.add( 550 , 0 , getImage("larrow").settings.hidden() )
+        .settings.add( 650 , 0 , getImage("rarrow").settings.hidden() )
+        .settings.add(   0 , 100 , getImage("ImageVisPracticeD") )
+        .settings.add( 650 , 100 , getImage("Pcov") )
+		.settings.add( 650 , 100 , getImage("hiddenPracticeD").settings.hidden() )
         .print()
     ,
-    newSelector()
+    getAudio("audPracticeD")
+       .wait("first")
+    ,
+	newTimer(500)
+        .start()
+        .wait()
+    ,
+    getImage("larrow").settings.visible()
+	,
+    newAudio("left", "Left.wav")
+        .play()
+    ,
+	getAudio("left")
+		.wait("first")
+	,
+    getImage("larrow").settings.hidden()
+	,
+	newTimer(1000)
+        .start()
+        .wait()
+    ,
+    getImage("rarrow").settings.visible()
+	,
+    newAudio("orright", "orRight.wav")
+        .play()
+    ,
+	getAudio("orright")
+		.wait("first")
+	,
+    getImage("rarrow").settings.hidden()
+	,
+    newSelector("selectD")
+		.settings.once()
         .settings.add( getImage("ImageVisPracticeD") , getImage("Pcov") )
         .settings.keys(          "F"    ,          "J"   )
         .settings.log()
         .wait()
     ,
-    getAudio("audPracticeD")
-       .wait("first")
-    ,
-    newTimer(500)
+	newTimer(250)
         .start()
         .wait()
+    ,
+    getSelector("selectD")           // Test whether the target image was selected
+        .test.selected( getImage("ImageVisPracticeD") )
+        .success(
+            newAudio("positive", "Correct.wav").play()   // Positive feedback if the test succeeds
+                .wait()
+        )
+        .failure(
+            newAudio("negative", "Incorrect.wav").play()   // Negative feedback if the test fails
+                .wait()
+        )
+	,
+    getImage("hiddenPracticeD").settings.visible()
+	,
+	newTimer(250)
+        .start()
+        .wait()
+    ,
+    newAudio("correctLeft", "CorrectLeft.wav")
+        .play()
+    ,
+	getAudio("correctLeft")
+		.wait("first")
+	,
+	newAudio("repeatD", "D_02.wav")
+        .play()
+    ,
+	getAudio("repeatD")
+		.wait("first")
+	,
+	newTimer(500)
+        .start()
+        .wait()
+    ,
+	newAudio("critical", "CriticalTrialsAfter.wav")
+        .play()
+    ,
+    getAudio("critical")
+       .wait("first")
+	,
   )
   .log( "age" , getVar("age") )
   .log( "gender" , getVar("gender") )
@@ -574,9 +729,9 @@ PennController.Template(
     newImage("cov", "Covered_Box.jpg")
         .settings.size(600,400)
     ,
-    newCanvas(1250,400)
+    newCanvas(1250,500)
         .settings.add( 0 , "middle at 50%" , getImage("visible") )
-        .settings.add( 650 , 0 , getImage("cov") )
+        .settings.add( 650 , 100 , getImage("cov") )
         .print()
     ,
     newSelector()
