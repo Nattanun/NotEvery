@@ -127,6 +127,24 @@ PennController( "practiceA" ,
         .start()
         .wait()
     ,
+	newAudio("instruc1", "Instruc01.wav")
+        .play()
+	,
+    getAudio("instruc1")
+       .wait("first")
+    ,
+	newAudio("instruc2", "Instruc02.wav")
+        .play()
+	,
+    getAudio("instruc2")
+       .wait("first")
+    ,
+	newAudio("instruc3", "TryPracticing.wav")
+        .play()
+	,
+    getAudio("instruc3")
+       .wait("first")
+    ,
     newAudio("audPracticeA1", "A_01.wav")
         .play()
     ,
@@ -155,9 +173,17 @@ PennController( "practiceA" ,
     newImage("Pcov", "Covered_Box.jpg")
         .settings.size(600,400)
     ,
-    newCanvas(1250,400)
-        .settings.add(   0 , 0 , getImage("ImageVisPracticeA") )
-        .settings.add( 650 , 0 , getImage("Pcov") )
+    newImage("larrow", "Left_Arrow.jpg")
+        .settings.size(100,100)
+    ,
+    newImage("rarrow", "Right_Arrow.jpg")
+        .settings.size(100,100)
+    ,
+    newCanvas(1250,500)
+        .settings.add( 550 , 0 , getImage("larrow").settings.hidden() )
+        .settings.add( 650 , 0 , getImage("rarrow").settings.hidden() )
+        .settings.add(   0 , 100 , getImage("ImageVisPracticeA") )
+        .settings.add( 650 , 100 , getImage("Pcov") )
         .print()
     ,
     newSelector()
@@ -168,6 +194,11 @@ PennController( "practiceA" ,
     ,
     getAudio("audPracticeA")
        .wait("first")
+    ,
+    newAudio("left", "Left.wav")
+        .play()
+    ,
+    getImage("larrow").settings.visible()
     ,
     newTimer(500)
         .start()
