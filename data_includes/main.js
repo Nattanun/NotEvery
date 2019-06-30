@@ -198,7 +198,6 @@ PennController( "practiceA" ,
         .settings.add( 650 , 0 , getImage("rarrow").settings.hidden() )
         .settings.add(   0 , 100 , getImage("ImageVisPracticeA") )
         .settings.add( 650 , 100 , getImage("Pcov") )
-		.settings.add( 650 , 100 , getImage("hiddenPracticeA").settings.hidden() )
         .print()
     ,
     getAudio("audPracticeA")
@@ -244,7 +243,7 @@ PennController( "practiceA" ,
 	,
     newSelector("selectA")
 		.settings.once()
-        .settings.add( getImage("ImageVisPracticeA") , getImage("hiddenPracticeA") )
+        .settings.add( getImage("ImageVisPracticeA") , getImage("Pcov") )
         .settings.keys(          "F"    ,          "J"   )
         .settings.log()
         .wait()
@@ -254,7 +253,7 @@ PennController( "practiceA" ,
         .wait()
     ,
     getSelector("selectA")           // Test whether the target image was selected
-        .test.selected( getImage("hiddenPracticeA") )
+        .test.selected( getImage("Pcov") )
         .success(
             newAudio("positive", "Correct.wav").play()   // Positive feedback if the test succeeds
                 .wait()
@@ -264,7 +263,12 @@ PennController( "practiceA" ,
                 .wait()
         )
 	,
-    getImage("hiddenPracticeA").settings.visible()
+    clear()
+	,
+    newCanvas(1250,500)
+        .settings.add(   0 , 100 , getImage("ImageVisPracticeA") )
+		.settings.add( 650 , 100 , getImage("hiddenPracticeA"))
+        .print()
 	,
 	newTimer(250)
         .start()
@@ -348,7 +352,6 @@ PennController( "practiceB" ,
         .settings.add( 650 , 0 , getImage("rarrow").settings.hidden() )
         .settings.add(   0 , 100 , getImage("ImageVisPracticeB") )
         .settings.add( 650 , 100 , getImage("Pcov") )
-		.settings.add( 650 , 100 , getImage("hiddenPracticeB").settings.hidden() )
         .print()
     ,
     getAudio("audPracticeB")
@@ -384,7 +387,7 @@ PennController( "practiceB" ,
 	,
     newSelector("selectB")
 		.settings.once()
-        .settings.add( getImage("ImageVisPracticeB") , getImage("hiddenPracticeB") )
+        .settings.add( getImage("ImageVisPracticeB") , getImage("PCov") )
         .settings.keys(          "F"    ,          "J"   )
         .settings.log()
         .wait()
@@ -404,7 +407,12 @@ PennController( "practiceB" ,
                 .wait()
         )
 	,
-    getImage("hiddenPracticeB").settings.visible()
+    clear()
+	,
+    newCanvas(1250,500)
+        .settings.add(   0 , 100 , getImage("ImageVisPracticeB") )
+		.settings.add( 650 , 100 , getImage("hiddenPracticeB"))
+        .print()
 	,
 	newTimer(250)
         .start()
@@ -477,7 +485,6 @@ PennController( "practiceC" ,
         .settings.add( 650 , 0 , getImage("rarrow").settings.hidden() )
         .settings.add(   0 , 100 , getImage("ImageVisPracticeC") )
         .settings.add( 650 , 100 , getImage("Pcov") )
-		.settings.add( 650 , 100 , getImage("hiddenPracticeC").settings.hidden() )
         .print()
     ,
     getAudio("audPracticeC")
@@ -513,7 +520,7 @@ PennController( "practiceC" ,
 	,
     newSelector("selectC")
 		.settings.once()
-        .settings.add( getImage("ImageVisPracticeC") , getImage("hiddenPracticeC") )
+        .settings.add( getImage("ImageVisPracticeC") , getImage("Pcov") )
         .settings.keys(          "F"    ,          "J"   )
         .settings.log()
         .wait()
@@ -523,7 +530,7 @@ PennController( "practiceC" ,
         .wait()
     ,
     getSelector("selectC")           // Test whether the target image was selected
-        .test.selected( getImage("hiddenPracticeC") )
+        .test.selected( getImage("Pcov") )
         .success(
             newAudio("positive", "Correct.wav").play()   // Positive feedback if the test succeeds
                 .wait()
@@ -533,7 +540,12 @@ PennController( "practiceC" ,
                 .wait()
         )
 	,
-    getImage("hiddenPracticeC").settings.visible()
+    clear()
+	,
+    newCanvas(1250,500)
+        .settings.add(   0 , 100 , getImage("ImageVisPracticeC") )
+		.settings.add( 650 , 100 , getImage("hiddenPracticeC"))
+        .print()
 	,
 	newTimer(250)
         .start()
@@ -606,7 +618,6 @@ PennController( "practiceD" ,
         .settings.add( 650 , 0 , getImage("rarrow").settings.hidden() )
         .settings.add(   0 , 100 , getImage("ImageVisPracticeD") )
         .settings.add( 650 , 100 , getImage("Pcov") )
-		.settings.add( 650 , 100 , getImage("hiddenPracticeD").settings.hidden() )
         .print()
     ,
     getAudio("audPracticeD")
@@ -662,7 +673,12 @@ PennController( "practiceD" ,
                 .wait()
         )
 	,
-    getImage("hiddenPracticeD").settings.visible()
+    clear()
+	,
+    newCanvas(1250,500)
+        .settings.add(   0 , 100 , getImage("ImageVisPracticeD") )
+		.settings.add( 650 , 100 , getImage("hiddenPracticeD"))
+        .print()
 	,
 	newTimer(250)
         .start()
