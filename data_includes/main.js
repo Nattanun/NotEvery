@@ -196,9 +196,9 @@ PennController( "practiceA" ,
     newCanvas(1250,500)
         .settings.add( 550 , 0 , getImage("larrow").settings.hidden() )
         .settings.add( 650 , 0 , getImage("rarrow").settings.hidden() )
-        .settings.add(   0 , 100 , getImage("ImageVisPracticeA") )
-        .settings.add( 650 , 100 , getImage("Pcov") )
+        .settings.add(   0 , 100 , getImage("ImageVisPracticeA") )		
 		.settings.add( 650 , 100 , getImage("hiddenPracticeA").settings.hidden() )
+        .settings.add( 650 , 100 , getImage("Pcov") )
         .print()
     ,
     getAudio("audPracticeA")
@@ -347,8 +347,8 @@ PennController( "practiceB" ,
         .settings.add( 550 , 0 , getImage("larrow").settings.hidden() )
         .settings.add( 650 , 0 , getImage("rarrow").settings.hidden() )
         .settings.add(   0 , 100 , getImage("ImageVisPracticeB") )
-        .settings.add( 650 , 100 , getImage("Pcov") )
 		.settings.add( 650 , 100 , getImage("hiddenPracticeB").settings.hidden() )
+        .settings.add( 650 , 100 , getImage("Pcov") )
         .print()
     ,
     getAudio("audPracticeB")
@@ -475,9 +475,9 @@ PennController( "practiceC" ,
     newCanvas(1250,500)
         .settings.add( 550 , 0 , getImage("larrow").settings.hidden() )
         .settings.add( 650 , 0 , getImage("rarrow").settings.hidden() )
-        .settings.add(   0 , 100 , getImage("ImageVisPracticeC") )
-        .settings.add( 650 , 100 , getImage("Pcov") )
+        .settings.add(   0 , 100 , getImage("ImageVisPracticeC") )		
 		.settings.add( 650 , 100 , getImage("hiddenPracticeC").settings.hidden() )
+        .settings.add( 650 , 100 , getImage("Pcov") )
         .print()
     ,
     getAudio("audPracticeC")
@@ -604,9 +604,9 @@ PennController( "practiceD" ,
     newCanvas(1250,500)
         .settings.add( 550 , 0 , getImage("larrow").settings.hidden() )
         .settings.add( 650 , 0 , getImage("rarrow").settings.hidden() )
-        .settings.add(   0 , 100 , getImage("ImageVisPracticeD") )
-        .settings.add( 650 , 100 , getImage("Pcov") )
+        .settings.add(   0 , 100 , getImage("ImageVisPracticeD") )		
 		.settings.add( 650 , 100 , getImage("hiddenPracticeD").settings.hidden() )
+        .settings.add( 650 , 100 , getImage("Pcov") )
         .print()
     ,
     getAudio("audPracticeD")
@@ -730,7 +730,7 @@ PennController.Template(
         .settings.size(600,400)
     ,
     newCanvas(1250,500)
-        .settings.add( 0 , "middle at 50%" , getImage("visible") )
+        .settings.add( 0 , 100+"middle at 50%" , getImage("visible") )
         .settings.add( 650 , 100 , getImage("cov") )
         .print()
     ,
