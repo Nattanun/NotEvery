@@ -52,7 +52,7 @@ PennController( "welcome" ,
         .settings.global()
 		.set( getDropDown("GenderOptions") )
 	,
-	newButton("ยืนยันคำตอบ")
+	newButton("validate", "ยืนยันคำตอบ")
         .print()
 		.wait(
 			getTextInput("age").test.text( /^\d\d$/ )
@@ -66,7 +66,8 @@ PennController( "welcome" ,
 			)
 	,
     newText("(กดสองครั้ง)")
-	.print()
+		.settings.before(getButton("validate"))
+		.print()
     ,
 	newText("<p><b>กรุณาใส่หูฟังและกดปุ่มเล่นเสียง เพื่อทดสอบว่าท่านได้ยินเสียงหรือไม่นะคะ</b></p>")
     ,
@@ -106,7 +107,7 @@ PennController( "welcome" ,
 	,
 	newText("<p>เมื่อกรอกและเลือกคำตอบทั้งหมดแล้ว กดปุ่มด้านล่างเพื่อเริ่มต้นการทดลองค่ะ</p>")
 	,
-    newButton("เริ่มต้นการทดลอง")
+    newButton("start", "เริ่มต้นการทดลอง")
         .print()
 		.wait(getDropDown("micTestChoice").test.selected("200")
 				.failure( newText("โปรดกดฟังเสียงและเลือกคำตอบที่ตรงกับเสียงค่ะ")
@@ -116,7 +117,8 @@ PennController( "welcome" ,
 					.print()))
 	,
     newText("(กดสองครั้ง)")
-	.print()
+		.settings.before(getButton("start"))
+		.print()
     ,
 )
 .log( "age" , getVar("age") )
