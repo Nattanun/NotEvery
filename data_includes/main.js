@@ -52,7 +52,7 @@ PennController( "welcome" ,
         .settings.global()
 		.set( getDropDown("GenderOptions") )
 	,
-	newText("<p><b>กรุณาใส่หูฟังและทดสอบว่าท่านได้ยินเสียงหรือไม่นะคะ</b></p>")
+	newText("<p><b>กรุณาใส่หูฟังและกดปุ่มเล่นเสียง เพื่อทดสอบว่าท่านได้ยินเสียงหรือไม่นะคะ</b></p>")
     ,
 	newAudio("micTest1", "MicTest1.wav")
     .settings.once()
@@ -64,7 +64,7 @@ PennController( "welcome" ,
     .settings.add("35", "87", "150", "200", "340")
     .print()
 	,
-    newText("(1) เสียงที่ท่านได้ยินข้างต้นตรงกับเลขใดต่อไปนี้")
+    newText("<p>(1) เสียงที่ท่านได้ยินข้างต้นตรงกับเลขใดต่อไปนี้</p>")
     .settings.after( getDropDown("micTestChoice") )
     .print()
     ,
@@ -82,7 +82,7 @@ PennController( "welcome" ,
     .settings.add("23", "56", "160", "367", "450")
     .print()
 	,
-    newText("(2) เสียงที่ท่านได้ยินข้างต้นตรงกับเลขใดต่อไปนี้")
+    newText("<p>(2) เสียงที่ท่านได้ยินข้างต้นตรงกับเลขใดต่อไปนี้</p>")
     .settings.after( getDropDown("micTestChoice2") )
     .print()
     ,
@@ -110,7 +110,7 @@ PennController( "welcome" ,
 					.print())
 			)
 		.wait(
-		getDropDown("micTestChoice").test.selected("56")
+		getDropDown("micTestChoice2").test.selected("56")
 					.failure( newText("โปรดกดฟังเสียงและเลือกคำตอบที่ตรงกับเสียงค่ะ")
 					.print())
 			)
