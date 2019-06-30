@@ -64,6 +64,7 @@ PennController( "welcome" ,
 					.failure( newText("โปรดเลือกเพศกำเนิดของท่านด้วยค่ะ")
 					.print())
 			)
+	,
 	newText("<p><b>กรุณาใส่หูฟังและกดปุ่มเล่นเสียง เพื่อทดสอบว่าท่านได้ยินเสียงหรือไม่นะคะ</b></p>")
     ,
 	newAudio("micTest1", "MicTest1.wav")
