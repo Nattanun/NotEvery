@@ -143,7 +143,7 @@ PennController( "practiceA" ,
     getAudio("instruc2")
        .wait("first")
     ,
-	newTimer(2000)
+	newTimer(1000)
         .start()
         .wait()
     ,
@@ -208,6 +208,9 @@ PennController( "practiceA" ,
 	newAudio("clickorpress", "ClickorPress.wav")
         .play()
     ,
+    getAudio("clickorpress")
+       .wait("first")
+    ,
 	newTimer(1000)
         .start()
         .wait()
@@ -217,6 +220,11 @@ PennController( "practiceA" ,
     ,
     getImage("larrow").settings.visible()
     ,
+    getAudio("larrow")
+       .wait("first")
+    ,
+    getImage("larrow").settings.hidden()
+    ,
 	newTimer(1000)
         .start()
         .wait()
@@ -224,7 +232,12 @@ PennController( "practiceA" ,
     newAudio("orright", "orRight.wav")
         .play()
     ,
-    getImage("rarrow").settings.visible()
+    getImage("rarrow").settings.visible().remove()
+    ,
+    getAudio("rarrow")
+       .wait("first")
+    ,
+    getImage("rarrow").settings.hidden()
     ,
     newSelector()
         .settings.add( getImage("ImageVisPracticeA") , getImage("Pcov") )
