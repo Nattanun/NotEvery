@@ -28,13 +28,6 @@ PennController( "welcome" ,
     //,
     newText("<p>โปรดกรอกอายุและเลือกเพศกำเนิดของท่าน และกดปุ่มยืนยันคำตอบสองครั้งค่ะ</p>")
     ,
-	
-	newVar("age", "")
-        .settings.global()
-	,
-	newVar("gender", "")
-        .settings.global()
-	,
     newTextInput("age")
 		.settings.length(2)
         .print()
@@ -106,6 +99,13 @@ PennController( "welcome" ,
 		.wait(getDropDown("micTestChoice2").test.selected("56")
 					.failure( newText("โปรดกดฟังเสียงและเลือกคำตอบที่ตรงกับเสียงค่ะ")
 					.print()))
+	,
+	newVar("age")
+        .settings.global()
+        .set( getVar("age") )
+	newVar("gender", "")
+        .settings.global()
+        .set( getVar("age") )
 )
 .log( "age" , getVar("age") )
 .log( "gender" , getVar("gender") )
