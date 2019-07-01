@@ -103,6 +103,7 @@ PennController( "welcome" ,
 	newVar("age")
         .settings.global()
         .set( getVar("age") )
+	,
 	newVar("gender", "")
         .settings.global()
         .set( getVar("age") )
