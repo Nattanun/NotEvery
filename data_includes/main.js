@@ -102,11 +102,11 @@ PennController( "welcome" ,
 	,
 	newVar("age")
         .settings.global()
-        .set( getVar("age") )
+        .set( getTextInput("age") )
 	,
 	newVar("gender", "")
         .settings.global()
-        .set( getVar("age") )
+        .set( getVar("gender") )
 )
 .log( "age" , getVar("age") )
 .log( "gender" , getVar("gender") )
