@@ -1,5 +1,5 @@
 PennController.ResetPrefix(null); // Initiates PennController
-//PennController.DebugOff()
+PennController.DebugOff()
 PennController.Sequence( "consent" , "welcome" , "practiceA" , "practiceB" , "practiceC" , "practiceD" , "experiment" , "send" , "final" ) //or you can randomize the experiment
 
 PennController( "consent",
