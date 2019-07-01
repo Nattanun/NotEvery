@@ -48,8 +48,6 @@ PennController( "welcome" ,
     newDropDown("GenderOptions", "")
 		.settings.add("หญิง", "ชาย")
 		.print()
-	,
-	getDropDown("GenderOptions")
 		.settings.log()
 		.setVar( "gender" )
 	,
@@ -80,6 +78,8 @@ PennController( "welcome" ,
     newDropDown("micTestChoice", "")
 		.settings.add("35", "87", "150", "200", "340")
 		.print()
+		.settings.log()
+		.setVar( "mic2" )
 	,
     newText("<p>(1) เสียงที่ท่านได้ยินข้างต้นตรงกับเลขใดคะ</p>")
 		.settings.after( getDropDown("micTestChoice") )
@@ -93,6 +93,8 @@ PennController( "welcome" ,
     newDropDown("micTestChoice2", "")
 		.settings.add("23", "56", "160", "367", "450")
 		.print()
+		.settings.log()
+		.setVar( "mic1" )
 	,
     newText("<p>(2) เสียงที่ท่านได้ยินข้างต้นตรงกับเลขใดคะ</p>")
 		.settings.after( getDropDown("micTestChoice2") )
@@ -108,14 +110,6 @@ PennController( "welcome" ,
 		.wait(getDropDown("micTestChoice2").test.selected("56")
 					.failure( newText("โปรดกดฟังเสียงและเลือกคำตอบที่ตรงกับเสียงค่ะ")
 					.print()))
-	,
-	getDropDown("micTestChoice")
-		.settings.log()
-		.setVar( "mic1" )
-	,
-	getDropDown("micTestChoice2")
-		.settings.log()
-		.setVar( "mic2" )
 )
 .log( "age" , getVar("age") )
 .log( "gender" , getVar("gender") )
