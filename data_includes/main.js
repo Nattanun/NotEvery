@@ -79,7 +79,6 @@ PennController( "welcome" ,
 		.settings.add("35", "87", "150", "200", "340")
 		.print()
 		.settings.log()
-		.setVar( "mic2" )
 	,
     newText("<p>(1) เสียงที่ท่านได้ยินข้างต้นตรงกับเลขใดคะ</p>")
 		.settings.after( getDropDown("micTestChoice") )
@@ -94,7 +93,6 @@ PennController( "welcome" ,
 		.settings.add("23", "56", "160", "367", "450")
 		.print()
 		.settings.log()
-		.setVar( "mic1" )
 	,
     newText("<p>(2) เสียงที่ท่านได้ยินข้างต้นตรงกับเลขใดคะ</p>")
 		.settings.after( getDropDown("micTestChoice2") )
