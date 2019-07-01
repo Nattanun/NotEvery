@@ -710,9 +710,18 @@ PennController( "practiceD" ,
 		.settings.center()
 		.print()
     ,
+    newText("<p> หลังจากภาพใหญ่ภาพแรก จะมีภาพที่สองขึ้นมา <b>ให้เลือกภาพที่ตรงกับเสียงบรรยายครั้งที่สองนะคะ</b> </p>")
+		.settings.center()
+		.print()
+    ,
 	newTimer(3000)
         .start()
         .wait()
+	,
+	newButton("continue", "ไปยังหน้าถัดไป")
+	.settings.right()
+    .print()
+    .wait()
   )
   .log( "age" , getVar("age") )
   .log( "gender" , getVar("gender") )
